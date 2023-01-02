@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Introversion-In-Depth</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="which_kind">Which kind of introverted are you</string>
+
+
 </resources>
