@@ -1,22 +1,22 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id(Plugins.application)
+    id(Plugins.jetbrains)
 }
 apply {
-    plugin("kotlin-android")
+    plugin(Plugins.kotlinPlugin)
 }
 
 android {
-    namespace = "com.example.introversion_in_depth"
-    compileSdk = 32
+    namespace = App.namespace
+    compileSdk = App.compileSdk
     buildFeatures.viewBinding = true
 
     defaultConfig {
-        applicationId = "com.example.introversion_in_depth"
-        minSdk = 21
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = App.applicationId
+        minSdk = App.minSdk
+        targetSdk = App.targetSdk
+        versionCode = App.versionCode
+        versionName = App.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,16 +43,26 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = App.jvmTarget
     }
 }
 
 dependencies {
-    implementation(Dependencies.androidXCore)
-    implementation(Dependencies.appCompat)
-    implementation(Dependencies.material)
-    implementation(Dependencies.constraintLayout)
-    testImplementation(Dependencies.jUnit)
-    androidTestImplementation(Dependencies.testJUnit)
-    androidTestImplementation(Dependencies.espresso)
+    implementation(Libs.androidXCore)
+    implementation(Libs.appCompat)
+    implementation(Libs.material)
+    implementation(Libs.constraintLayout)
+    implementation(Libs.navigation)
+//    implementation(Libs.splashScreen)
+
+    implementation(Libs.lifecycle)
+
+
+    implementation(Libs.coroutines)
+
+    implementation(Libs.workManager)
+
+    testImplementation(TestLibs.jUnit)
+    androidTestImplementation(TestLibs.testJUnit)
+    androidTestImplementation(TestLibs.espresso)
 }

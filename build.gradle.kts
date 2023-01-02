@@ -2,15 +2,15 @@
 
 buildscript {
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.0")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
+        classpath(BuildScript.toolsGradlePlugin)
+        classpath(BuildScript.jetbrainsGradlePlugin)
     }
 }
 
 plugins {
-    id("com.android.application") version "7.3.1" apply false
-    id("com.android.library") version "7.3.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.7.20" apply false
+    id(BuildScript.androidApplicationId) version "7.3.1" apply false
+    id(BuildScript.libraryPlugin) version "7.3.1" apply false
+    id(BuildScript.jetbrainsKotlinPlugin) version "1.7.20" apply false
 }
 
 tasks.register("clean").configure {
