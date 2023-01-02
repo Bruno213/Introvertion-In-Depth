@@ -1,0 +1,1 @@
+C:\Users\bruno\AndroidStudioProjects\Introvertion-In-Depth\buildSrc\build\classes\kotlin\main\Dependencies.class;C:\Users\bruno\AndroidStudioProjects\Introvertion-In-Depth\buildSrc\build\classes\kotlin\main\Versions.class
