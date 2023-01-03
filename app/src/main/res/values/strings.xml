@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Introversion-In-Depth</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="which_kind">Which kind of introverted \nare you</string>
+
+    <string name="which_kind">Which kind of introverted \nare you?</string>
     <string name="second_title">Get to know the different aspects of this often generalized part of yourself.</string>
     <string name="start_quiz">Start Quiz</string>
-
-
+    <string name="results">Results</string>
+    <string name="about_the_test">About the test</string>
+    <string name="copyright_disclaimer">Content for this test was taken \ndirectly from this article:</string>
+    <string name="link_to_article">
+        <a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you \n(Clickable link)</a>
+    </string>
+    <string name="content_description">media</string>
+    <string name="each_type">Each Type</string>
+    <string name="icon">icon</string>
 </resources>

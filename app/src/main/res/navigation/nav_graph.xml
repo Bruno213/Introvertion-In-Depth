@@ -3,11 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/startScreen">
+    app:startDestination="@id/start">
 
     <fragment
-        android:id="@+id/startScreen"
-        android:name="com.example.introversion_in_depth.UI.fragments.StartScreen.StartScreen"
+        android:id="@+id/start"
+        android:name="com.example.introversion_in_depth.ui.fragments.startFragment.StartFragment"
         android:label="fragment_start_screen"
-        tools:layout="@layout/fragment_start_screen" />
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_start_to_faq"
+            app:destination="@id/faq" />
+        <action
+            android:id="@+id/action_start_to_quizFragment"
+            app:destination="@id/quiz" />
+    </fragment>
+    <fragment
+        android:id="@+id/eachType"
+        android:name="com.example.introversion_in_depth.ui.fragments.eachtypefragment.EachTypeFragment"
+        android:label="fragment_each_type"
+        tools:layout="@layout/fragment_each_type" />
+    <fragment
+        android:id="@+id/faq"
+        android:name="com.example.introversion_in_depth.ui.fragments.faqfragment.FaqFragment"
+        android:label="fragment_faq_screen"
+        tools:layout="@layout/fragment_faq" />
+    <fragment
+        android:id="@+id/quiz"
+        android:name="com.example.introversion_in_depth.ui.fragments.quizfragment.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_start"
+            app:destination="@id/start" />
+    </fragment>
 </navigation>

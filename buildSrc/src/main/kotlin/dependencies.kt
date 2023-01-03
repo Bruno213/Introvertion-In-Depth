@@ -48,6 +48,7 @@ object Libs {
 
     //Navigation
     const val navigation = "androidx.navigation:navigation-fragment:${Versions.navigation}"
+    const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
 
     //Lifecycle Aware components
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.awareComponents}"

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.startFragment.StartFragment"
+    tools:background="@color/zeus">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <ImageView
+        android:id="@+id/language_picker"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_language_picker"
+        android:contentDescription="@string/icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/dehaze"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_dehaze"
+        android:contentDescription="@string/icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:text="@string/which_kind"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        />
+
+    <TextView
+        android:id="@+id/second_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:text="@string/second_title"
+        app:layout_constraintTop_toBottomOf="@id/main_title"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+
+        />
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginHorizontal="68dp"
+        android:src="@drawable/main_logo"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintTop_toBottomOf="@id/second_title"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintBottom_toTopOf="@id/btn_start_quiz"
+        app:layout_constraintVertical_chainStyle="spread"
+        />
+
+
+    <Button
+        android:id="@+id/btn_start_quiz"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:text="@string/start_quiz"
+        app:backgroundTint="@null"
+        android:background="@drawable/btn_style_rounded"
+        app:layout_constraintTop_toBottomOf="@id/image_logo"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintBottom_toTopOf="@id/about_the_test"
+        />
+
+
+    <Button
+        android:id="@+id/results"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="@string/results"
+        app:backgroundTint="@null"
+        android:background="@drawable/btn_style_rounded_v3"
+        app:layout_constraintTop_toTopOf="@id/about_the_test"
+        app:layout_constraintEnd_toStartOf="@id/about_the_test"
+        app:layout_constraintStart_toStartOf="@id/btn_start_quiz"
+        app:layout_constraintBottom_toBottomOf="@id/about_the_test"
+        />
+
+    <Button
+        android:id="@+id/about_the_test"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:text="@string/about_the_test"
+        app:backgroundTint="@null"
+        android:background="@drawable/btn_style_rounded_v2"
+        app:layout_constraintTop_toBottomOf="@id/btn_start_quiz"
+        app:layout_constraintEnd_toEndOf="@id/btn_start_quiz"
+        app:layout_constraintStart_toEndOf="@id/results"
+        app:layout_constraintBottom_toTopOf="@id/copyright_disclaimer"
+        />
+
+
+    <TextView
+        android:id="@+id/copyright_disclaimer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="25dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:text="@string/copyright_disclaimer"
+
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintBottom_toTopOf="@id/link_to_article"
+        />
+
+    <TextView
+        android:id="@+id/link_to_article"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:padding="0dp"
+        android:linksClickable="true"
+        android:text="@string/link_to_article"
+        android:textAlignment="center"
+        android:textColor="@color/turquoise_blue"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

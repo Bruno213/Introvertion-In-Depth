@@ -53,13 +53,10 @@ dependencies {
     implementation(Libs.material)
     implementation(Libs.constraintLayout)
     implementation(Libs.navigation)
+    implementation(Libs.navigationUI)
 //    implementation(Libs.splashScreen)
-
     implementation(Libs.lifecycle)
-
-
     implementation(Libs.coroutines)
-
     implementation(Libs.workManager)
 
     testImplementation(TestLibs.jUnit)

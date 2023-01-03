@@ -16,7 +16,12 @@
         <!-- Customize your theme here. -->
     </style>
 
-<!--    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">-->
+    <style name="NavigationDrawerTextStyle">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/turquoise_blue</item>
+    </style>
+
+    <!--    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">-->
 <!--        <item name="windowSplashScreenAnimatedIcon">@color/zeus</item>-->
 <!--        <item name="postSplashScreenTheme">@style/Theme.IntroversionInDepth</item>-->
 <!--    </style>-->
