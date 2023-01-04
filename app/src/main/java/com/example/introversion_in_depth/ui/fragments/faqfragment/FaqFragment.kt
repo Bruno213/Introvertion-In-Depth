@@ -1,13 +1,10 @@
 package com.example.introversion_in_depth.ui.fragments.faqfragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import com.example.introversion_in_depth.R
 import com.example.introversion_in_depth.base.BaseFragment
 import com.example.introversion_in_depth.databinding.FragmentFaqBinding
+import com.example.introversion_in_depth.ui.ViewState
 
 
 class FaqFragment : BaseFragment<FragmentFaqBinding>() {
@@ -15,6 +12,10 @@ class FaqFragment : BaseFragment<FragmentFaqBinding>() {
         get() = FragmentFaqBinding::inflate
 
     override fun setup() {
+
+    }
+
+    override fun render(viewState: ViewState) {
 
     }
 }
