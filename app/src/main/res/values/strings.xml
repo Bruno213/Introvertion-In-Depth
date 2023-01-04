@@ -13,4 +13,83 @@
     <string name="content_description">media</string>
     <string name="each_type">Each Type</string>
     <string name="icon">icon</string>
+
+    <string name="social">Social Introversion</string>
+    <string name="thinking">Thinking Introversion</string>
+    <string name="anxious">Anxious Introversion</string>
+    <string name="restrained">Restrained Introversion</string>
+
+    <string name="ranking_option_1">Very uncharacteristic or untrue, strongly disagree</string>
+    <string name="ranking_option_2">Uncharacteristic</string>
+    <string name="ranking_option_3">Neutral</string>
+    <string name="ranking_option_4">Characteristic</string>
+    <string name="ranking_option_5">Very characteristic or true, strongly agree</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_share">Share</string>
+
+    <string-array name="questions">
+        // Social Introversion
+        <item>I like to share special occasions with just one person or a few close friends, rather than have big celebrations.</item>
+        <item>I think it would be satisfying if I could have very close friendships with many people.</item>
+        <item>I try to structure my day so that I always have some time to myself.</item>
+        <item>I like to vacation in places where there are a lot of people around and a lot of activities going on.</item>
+        <item>After spending a few hours surrounded by a lot of people, I am usually eager to get away by myself.</item>
+        <item>I do not have a strong need to be around other people.</item>
+        <item>Just being around others and finding out about them is one of the most interesting things I can think of doing.</item>
+        <item>I usually prefer to do things alone.</item>
+        <item>Other people tend to misunderstand me—forming a mistaken impression of what kind of person I am because I don’t say much about myself.</item>
+        <item>I feel drained after social situations, even when I enjoyed myself.</item>
+
+        // Thinking Introversion
+        <item>I enjoy analyzing my own thoughts and ideas about myself.</item>
+        <item>I have a rich, complex inner life.</item>
+        <item>I frequently think about what kind of person I am.</item>
+        <item>When I am reading an interesting story or novel or when I am watching a good movie, I imagine how I would feel if the events in the story were happening to me.</item>
+        <item>I seldom think about myself.</item>
+        <item>I generally pay attention to my inner feelings.</item>
+        <item>I value my personal self-evaluation, that is, the private opinion I have of myself.</item>
+        <item>I sometimes step back (in my mind) in order to examine myself from a distance.</item>
+        <item>I daydream and fantasize, with some regularity, about things that might happen to me.</item>
+        <item>I am inclined to be introspective, that is, to analyze myself.</item>
+
+        // Anxious Introversion
+        <item>When I enter a room I often become self-conscious and feel that the eyes of others are upon me.</item>
+        <item>My thoughts are often focused on episodes of my life that I wish I’d stop thinking about.</item>
+        <item>My nervous system sometimes feels so frazzled that I just have to get off by myself.</item>
+        <item>I am confident about my social skills.</item>
+        <item>Defeat or disappointment usually shame or anger me, but I try not to show it.</item>
+        <item>It does not take me long to overcome my shyness in new situations.</item>
+        <item>I feel relaxed even in unfamiliar social situations.</item>
+        <item>Even when I am in a group of friends, I often feel very alone and uneasy.</item>
+        <item>My secret thoughts, feelings, and actions would horrify some of my friends.</item>
+        <item>I feel painfully self-conscious when I am around strangers.</item>
+
+        // Restrained Introversion
+        <item>I like to be off and running as soon as I wake up in the morning.</item>
+        <item>I’ll try anything once.</item>
+        <item>For relaxation I like to slow down and take things easy.</item>
+        <item>I like to wear myself out with exertion.</item>
+        <item>I often say the first thing that comes into my head.</item>
+        <item>I generally seek new and exciting experiences and sensations.</item>
+        <item>I like to keep busy all the time.</item>
+        <item>I often act on the spur of the moment.</item>
+        <item>I sometimes do “crazy” things just to be different.</item>
+        <item>I often feel sluggish.</item>
+    </string-array>
+
+<!--    To find out your score for each of the four kinds of introversion,RECODE the following Reverse-Worded items: (1=5) (2=4) (4=2) (5=1):-->
+
+<!--    Social Introversion items: 2, 4, & 7-->
+<!--    Thinking Introversion item: 5-->
+<!--    Anxious Introversion items: 4, 6, & 7-->
+<!--    Restrained Introversion items: 1, 2, 4, 5, 6, 7, 8, & 9-->
+
+<!--    Next, add together all the numbers to come up with a total score.-->
+
+<!--    Here's a guide of how you scored compared to others in the general population:-->
+<!--    Social Introversion &#45;&#45; below 24 low, around 30 average, above 36 high-->
+<!--    Thinking Introversion &#45;&#45; below 28 low, around 34 average, above 40 high-->
+<!--    Anxious Introversion &#45;&#45; below 23 low, around 30 average, above 37 high-->
+<!--    Restrained Introversion &#45;&#45; below 25 low, around 31 average, above 37 high-->
 </resources>
