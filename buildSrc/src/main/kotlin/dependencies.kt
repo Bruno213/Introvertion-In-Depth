@@ -12,7 +12,8 @@ object App {
 
 object Plugins {
     const val application = "com.android.application"
-    const val jetbrains = "org.jetbrains.kotlin.android"
+    const val jetbrains  ="android"
+    const val kapt  ="kapt"
     const val kotlinPlugin = "kotlin-android"
 }
 
@@ -29,6 +30,11 @@ object Versions {
     const val coroutines = "1.6.4"
 
     const val workManager = "2.7.1"
+
+
+    const val roomRunTime  = "2.4.3"
+    const val roomKtx  = "2.4.3"
+    const val roomCompiler = "2.4.3"
 
     const val jUnit = "4.13.2"
     const val testJUnit = "1.1.3"
@@ -58,6 +64,11 @@ object Libs {
 
     // WorkManager
     const val workManager = "androidx.work:work-runtime-ktx:${Versions.workManager}"
+
+    // Room
+    const val roomRunTime = "androidx.room:room-runtime:${Versions.roomRunTime}"
+    const val roomKtx  = "androidx.room:room-ktx:${Versions.roomKtx}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.roomCompiler}"
 }
 
 object TestLibs {

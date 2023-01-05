@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.application)
-    id(Plugins.jetbrains)
+    kotlin(Plugins.jetbrains)
+    kotlin(Plugins.kapt)
 }
 apply {
     plugin(Plugins.kotlinPlugin)
@@ -52,12 +53,20 @@ dependencies {
     implementation(Libs.appCompat)
     implementation(Libs.material)
     implementation(Libs.constraintLayout)
+    // Navigation
     implementation(Libs.navigation)
     implementation(Libs.navigationUI)
 //    implementation(Libs.splashScreen)
+    // Lifecycle
     implementation(Libs.lifecycle)
+    //Coroutines
     implementation(Libs.coroutines)
+    //WorkManager
     implementation(Libs.workManager)
+    //Room
+    implementation(Libs.roomRunTime)
+    implementation(Libs.roomKtx)
+    kapt(Libs.roomCompiler)
 
     testImplementation(TestLibs.jUnit)
     androidTestImplementation(TestLibs.testJUnit)

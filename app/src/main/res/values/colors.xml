@@ -7,7 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
 
-
     // Project colors
     <color name="white">#FFFFFFFF</color>
     <color name="zeus">#262424</color>
@@ -16,5 +15,4 @@
     <color name="turquoise_blue">#5AD2F4</color>
     <color name="day_sky_blue">#84D2F6</color>
     <color name="greenish_cyan">#63E2C6</color>
-
 </resources>

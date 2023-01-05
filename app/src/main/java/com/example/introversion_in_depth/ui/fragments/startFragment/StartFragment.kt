@@ -34,7 +34,6 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
 
             binding.languagePicker.id -> {}
             binding.btnStartQuiz.id -> {
-
                 findNavController().navigate(R.id.action_start_to_quizFragment)
             }
             binding.results.id -> {

@@ -7,7 +7,6 @@
     tools:context=".ui.fragments.startFragment.StartFragment"
     tools:background="@color/zeus">
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="0dp"
@@ -104,7 +103,6 @@
         app:layout_constraintVertical_chainStyle="spread"
         />
 
-
     <Button
         android:id="@+id/btn_start_quiz"
         android:layout_width="0dp"
@@ -121,7 +119,6 @@
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintBottom_toTopOf="@id/about_the_test"
         />
-
 
     <Button
         android:id="@+id/results"
@@ -157,7 +154,6 @@
         app:layout_constraintBottom_toTopOf="@id/copyright_disclaimer"
         />
 
-
     <TextView
         android:id="@+id/copyright_disclaimer"
         android:layout_width="0dp"
@@ -190,5 +186,4 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
          />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

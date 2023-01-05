@@ -33,5 +33,4 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             super.onBackPressed()
         }
     }
-
 }
