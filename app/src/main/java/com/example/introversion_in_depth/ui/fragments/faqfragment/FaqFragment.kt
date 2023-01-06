@@ -15,7 +15,7 @@ class FaqFragment : BaseFragment<FragmentFaqBinding>() {
 
     }
 
-    override fun render(viewState: ViewState) {
+    override fun handleState(viewState: ViewState) {
 
     }
 }

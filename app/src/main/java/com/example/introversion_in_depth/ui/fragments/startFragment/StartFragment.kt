@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.introversion_in_depth.R
 import com.example.introversion_in_depth.base.BaseFragment
 import com.example.introversion_in_depth.databinding.FragmentStartBinding
+import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.removeLinksUnderline
@@ -17,14 +18,16 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentStartBinding
         get() = FragmentStartBinding::inflate
 
-    private val viewModel by viewModelsFactory { StartViewModel(this) }
+    private val viewModel by viewModelsFactory{
+        StartViewModel(this, (activity?.applicationContext as CustomApplication).appContainer.quizRepository)
+    }
 
     override fun setup() {
         setupListeners()
         enableLink()
     }
 
-    override fun render(viewState: ViewState) {
+    override fun handleState(viewState: ViewState) {
 
     }
 

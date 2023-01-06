@@ -16,7 +16,7 @@ class EachTypeFragment : BaseFragment<FragmentEachTypeBinding>() {
 
     }
 
-    override fun render(viewState: ViewState) {
+    override fun handleState(viewState: ViewState) {
 
     }
 }
