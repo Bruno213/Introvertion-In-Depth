@@ -11,19 +11,28 @@ class QuizRepository(private val quizDao: QuizDao) {
         return quizDao.insertQuiz(quiz)
     }
 
-    fun getQuiz(id: Int): Quiz {
-        return quizDao.getQuiz(id)
-    }
+//    fun getQuiz(id: Int): Quiz {
+//        return quizDao.getQuiz(id)
+//    }
+//
+//    fun getQuizWithAnswers(): Flow<List<QuizWithAnswers>> {
+//        return quizDao.getQuizWithAnswers()
+//    }
+//
+//    fun getAnswer(id: Int): Answer {
+//        return quizDao.getAnswer(id)
+//    }
 
-    fun getQuizWithAnswers(): Flow<List<QuizWithAnswers>> {
-        return quizDao.getQuizWithAnswers()
-    }
-
-    fun getAnswer(id: Int): Answer {
-        return quizDao.getAnswer(id)
-    }
-
-    fun insertAnswer(answer: Answer): Long {
+    suspend fun insertAnswer(answer: Answer): Long {
         return quizDao.insertAnswer(answer)
     }
+
+    suspend fun updateAnswer(answer: Answer) {
+        quizDao.updateAnswer(answer)
+    }
+
+
+//    fun getAnswerCount(): Int {
+//        return quizDao.getAnswersCount()
+//    }
 }

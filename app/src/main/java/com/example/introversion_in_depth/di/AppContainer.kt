@@ -6,9 +6,11 @@ import com.example.introversion_in_depth.data.local.AppDatabase
 import com.example.introversion_in_depth.data.repository.QuizRepository
 
 class AppContainer(applicationContext: Context) {
-    private val appDatabase = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "introversionInDepth")
-        .fallbackToDestructiveMigration()
-        .build()
+    val quizRepository by lazy {
+        val appDatabase = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "introversionInDepth")
+            .fallbackToDestructiveMigration()
+            .build()
 
-    val quizRepository = QuizRepository(appDatabase.getQuizDao())
+        QuizRepository(appDatabase.getQuizDao())
+    }
 }

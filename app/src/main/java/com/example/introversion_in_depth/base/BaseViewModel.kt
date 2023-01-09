@@ -28,10 +28,14 @@ abstract class BaseViewModel<state: ViewState, mviAction: MVIAction> : ViewModel
 
     abstract fun process(action: mviAction)
 
+    protected fun setState(viewState: ViewState) {
+        _state.value = viewState
+    }
+
     protected abstract fun clear()
 
     override fun onCleared() {
-        super.onCleared()
         clear()
+        super.onCleared()
     }
 }

@@ -18,9 +18,9 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentStartBinding
         get() = FragmentStartBinding::inflate
 
-    private val viewModel by viewModelsFactory{
-        StartViewModel(this, (activity?.applicationContext as CustomApplication).appContainer.quizRepository)
-    }
+//    private val viewModel by viewModelsFactory{
+//        StartViewModel(this, (activity?.applicationContext as CustomApplication).appContainer.quizRepository)
+//    }
 
     override fun setup() {
         setupListeners()

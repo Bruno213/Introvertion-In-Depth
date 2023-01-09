@@ -27,6 +27,8 @@
     <string name="btn_back">Back</string>
     <string name="btn_next">Next</string>
     <string name="btn_share">Share</string>
+    <string name="question_placeholder">description</string>
+    <string name="quiz_progress">%d/40</string>
 
     <string-array name="questions">
         // Social Introversion

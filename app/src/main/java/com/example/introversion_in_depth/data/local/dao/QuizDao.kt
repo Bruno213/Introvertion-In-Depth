@@ -22,5 +22,11 @@ interface QuizDao {
     fun getAnswer(id: Int): Answer
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAnswer(answer: Answer): Long
+    suspend fun insertAnswer(answer: Answer): Long
+
+    @Update
+    fun updateAnswer(answer: Answer)
+
+    @Query("SELECT count(*) from answer")
+    fun getAnswersCount(): Int
 }

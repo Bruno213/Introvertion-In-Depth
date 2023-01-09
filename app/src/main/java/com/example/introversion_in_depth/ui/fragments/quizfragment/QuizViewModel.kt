@@ -16,31 +16,19 @@ import kotlinx.coroutines.withContext
 class QuizViewModel(
     private val view: ViewStateHandler,
     private val quizRepository: QuizRepository
-    ): BaseViewModel<QuizState, QuizAction>() {
+): BaseViewModel<QuizState, QuizAction>() {
 
     init {
         collect()
     }
 
     private lateinit var questions: List<String>
+    private val answers = ArrayList<Answer>()
     private var quizId = 0
-    private val answersId = ArrayList<Int>()
-
-    /**
-     * When the fragment opens first time,save new Quiz object to db. Also, save new answer to db and to a list in viewModel.
-     * Update view state with the new question.
-     *
-     *
-     * **/
-
+    private var currentIndex = 0
 
     override fun collect() {
         state.onEach {
-            when(it) {
-                is QuizState.NextQuestion -> {
-
-                }
-            }
             view.handleState(it)
         }.launchIn(viewModelScope)
     }
@@ -48,15 +36,60 @@ class QuizViewModel(
     override fun process(action: QuizAction) {
         CoroutineScope(Dispatchers.Default).launch {
             when(action) {
-                QuizAction.GetQuiz -> {
+                is QuizAction.MoveToNext -> {
+                    if(answers.size >= questions.size-1) {
+                        setState(QuizState.Finished)
+                        return@launch
+                    }
 
+                    val answer = Answer(
+                        quizId = quizId,
+                        choice = action.userChoice.first,
+                        choiceValue = action.userChoice.second
+                    )
+
+                    if (currentIndex < answers.size) {
+                        answer.id = answers[currentIndex].id
+
+                        withContext(Dispatchers.Default)
+                        { quizRepository.updateAnswer(answer) }
+
+                        answers[currentIndex] = answer
+
+                        currentIndex++
+                        setState(QuizState.QuestionLoaded(
+                            questions[currentIndex],
+                            if (currentIndex < answers.size) answers[currentIndex] else null,
+                            answers.size
+                        ))
+                        return@launch
+                    }
+
+                    val answerId = withContext(Dispatchers.Default)
+                    { quizRepository.insertAnswer(answer) }
+
+                    answer.id = answerId.toInt()
+                    answers.add(answer)
+
+                    currentIndex++
+                    println("$currentIndex")
+                    //if(currentIndex < answers.size)
+                    setState(QuizState.QuestionLoaded(
+                        questions[currentIndex],
+                        null,
+                        answers.size
+                    ))
                 }
 
-                QuizAction.ToNextQuestion -> {
+                QuizAction.MoveToPrevious -> {
+                    currentIndex--
 
-                }
-
-                QuizAction.ToPreviousQuestion -> {
+                    setState(QuizState.QuestionLoaded(
+                        questions[currentIndex],
+                        answers[currentIndex],
+                        answers.size,
+                        currentIndex == 0
+                    ))
                 }
 
                 is QuizAction.StartNewQuiz -> {
@@ -65,13 +98,12 @@ class QuizViewModel(
                     quizId = withContext(Dispatchers.Default)
                     { quizRepository.insertQuiz(Quiz()).toInt() }
 
-                    val answerId = withContext(Dispatchers.Default)
-                    { quizRepository.insertAnswer(Answer(quizId = quizId)).toInt() }
-
-                    answersId.add(answerId)
+                    setState(QuizState.QuestionLoaded(
+                        questions[0],
+                        null,
+                        answers.size
+                    ))
                 }
-
-                else -> {}
             }
         }
     }
