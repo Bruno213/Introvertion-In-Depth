@@ -1,14 +1,19 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
+import android.app.Dialog
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatRadioButton
-import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.core.view.isVisible
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
 import com.example.introversion_in_depth.R
 import com.example.introversion_in_depth.base.BaseFragment
+import com.example.introversion_in_depth.databinding.DialogLeaveBinding
 import com.example.introversion_in_depth.databinding.FragmentQuizBinding
 import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.ViewState
@@ -27,6 +32,13 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
     override fun handleState(viewState: ViewState) {
         when(viewState) {
             QuizState.Finished -> {
+                findNavController().currentDestination?.id?.let { destinationId ->
+                    val navOptions = NavOptions.Builder()
+                        .setPopUpTo(destinationId, true)
+                        .build()
+
+                    findNavController().navigate(R.id.action_quiz_to_resultFragment, null, navOptions)
+                }
             }
 
             is QuizState.QuestionLoaded -> {
@@ -56,6 +68,7 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
 
     override fun setup() {
         setListeners()
+        setBackButtonBehavior()
 
         val questionsArray = resources.getStringArray(R.array.questions).asList()
         viewModel.process(QuizAction.StartNewQuiz(questionsArray))
@@ -64,6 +77,26 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
     private fun setListeners() {
         binding.btnNext.setOnClickListener(this)
         binding.btnBack.setOnClickListener(this)
+    }
+
+    private fun setBackButtonBehavior() {
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val dialogLeave = Dialog(requireContext(), R.style.NewDialog)
+                val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                val bind = DialogLeaveBinding.inflate(inflater)
+                dialogLeave.setContentView(bind.root)
+                bind.btnLeave.setOnClickListener {
+                    findNavController().popBackStack()
+                    dialogLeave.dismiss()
+                }
+                bind.btnStay.setOnClickListener {
+                    dialogLeave.dismiss()
+                }
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
     }
 
     override fun onClick(v: View) {

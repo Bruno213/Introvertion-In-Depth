@@ -60,7 +60,7 @@ class QuizViewModel(
                         setState(QuizState.QuestionLoaded(
                             questions[currentIndex],
                             if (currentIndex < answers.size) answers[currentIndex] else null,
-                            answers.size
+                            currentIndex+1
                         ))
                         return@launch
                     }
@@ -77,7 +77,7 @@ class QuizViewModel(
                     setState(QuizState.QuestionLoaded(
                         questions[currentIndex],
                         null,
-                        answers.size
+                        currentIndex+1
                     ))
                 }
 
@@ -87,7 +87,7 @@ class QuizViewModel(
                     setState(QuizState.QuestionLoaded(
                         questions[currentIndex],
                         answers[currentIndex],
-                        answers.size,
+                        currentIndex+1,
                         currentIndex == 0
                     ))
                 }
@@ -101,7 +101,7 @@ class QuizViewModel(
                     setState(QuizState.QuestionLoaded(
                         questions[0],
                         null,
-                        answers.size
+                        1
                     ))
                 }
             }

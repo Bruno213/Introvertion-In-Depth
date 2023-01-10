@@ -33,7 +33,12 @@
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" >
         <action
-            android:id="@+id/action_quizFragment_to_start"
-            app:destination="@id/start" />
+            android:id="@+id/action_quiz_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.introversion_in_depth.ui.fragments.resultfragment.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>

@@ -103,7 +103,7 @@
         app:layout_constraintVertical_chainStyle="spread"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start_quiz"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
         app:layout_constraintBottom_toTopOf="@id/about_the_test"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/results"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -137,7 +137,7 @@
         app:layout_constraintBottom_toBottomOf="@id/about_the_test"
         />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/about_the_test"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
