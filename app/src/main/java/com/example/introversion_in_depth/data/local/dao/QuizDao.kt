@@ -15,8 +15,8 @@ interface QuizDao {
     fun getQuiz(id: Int): Quiz
 
     @Transaction
-    @Query("SELECT * FROM Quiz limit 1")
-    fun getQuizWithAnswers(): Flow<List<QuizWithAnswers>>
+    @Query("SELECT * FROM Quiz WHERE id == :quizId")
+    suspend fun getQuizWithAnswers(quizId: Int): QuizWithAnswers
 
     @Query("SELECT * FROM answer WHERE id == :id")
     fun getAnswer(id: Int): Answer

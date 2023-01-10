@@ -19,7 +19,6 @@
     <string name="anxious">Anxious Introversion</string>
     <string name="restrained">Restrained Introversion</string>
 
-
     <string name="r_social">Social Introvert</string>
     <string name="r_thinking">Thinking Introvert</string>
     <string name="r_anxious">Anxious Introvert</string>
@@ -31,6 +30,13 @@
     <string name="ranking_option_4">Characteristic</string>
     <string name="ranking_option_5">Very characteristic or true, strongly agree</string>
 
+    <string name="score">Score: %d</string>
+    <string name="level">Level: %d</string>
+
+    <string name="low">Low</string>
+    <string name="average">Average</string>
+    <string name="high">High</string>
+
     <string name="btn_back">Back</string>
     <string name="btn_next">Next</string>
     <string name="leave">Leave</string>
@@ -39,10 +45,8 @@
     <string name="close">Close</string>
     <string name="question_placeholder">description</string>
     <string name="quiz_progress">%d/40</string>
-    <string name="warning">Are you sure that you wanna stop the quiz now? Your progress will be lost</string>
+    <string name="warning">Are you sure that you wanna stop the quiz now? Your progress will be lost.</string>
     <string name="you_are_mostly_a">You are mostly a</string>
-    <string name="score">Score: %s</string>
-    <string name="level">Level: %s</string>
 
     <string-array name="questions">
         // Social Introversion

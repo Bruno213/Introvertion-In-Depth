@@ -24,8 +24,8 @@ class QuizViewModel(
 
     private lateinit var questions: List<String>
     private val answers = ArrayList<Answer>()
-    private var quizId = 0
     private var currentIndex = 0
+    private var quizId = 0
 
     override fun collect() {
         state.onEach {
@@ -106,6 +106,10 @@ class QuizViewModel(
                 }
             }
         }
+    }
+
+    fun getQuizId(): Int {
+        return quizId
     }
 
     override fun clear() {

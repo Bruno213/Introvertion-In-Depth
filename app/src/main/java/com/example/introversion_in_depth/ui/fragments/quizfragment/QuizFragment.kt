@@ -2,6 +2,7 @@ package com.example.introversion_in_depth.ui.fragments.quizfragment
 
 import android.app.Dialog
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,7 +38,9 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                         .setPopUpTo(destinationId, true)
                         .build()
 
-                    findNavController().navigate(R.id.action_quiz_to_resultFragment, null, navOptions)
+                    findNavController().navigate(R.id.action_quiz_to_resultFragment,
+                        Bundle().apply { putInt("quizId", viewModel.getQuizId()) },
+                        navOptions)
                 }
             }
 
@@ -93,6 +96,8 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                 bind.btnStay.setOnClickListener {
                     dialogLeave.dismiss()
                 }
+
+                dialogLeave.show()
             }
         }
 

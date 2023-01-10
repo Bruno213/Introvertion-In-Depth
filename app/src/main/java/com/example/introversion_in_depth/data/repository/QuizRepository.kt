@@ -15,9 +15,9 @@ class QuizRepository(private val quizDao: QuizDao) {
 //        return quizDao.getQuiz(id)
 //    }
 //
-//    fun getQuizWithAnswers(): Flow<List<QuizWithAnswers>> {
-//        return quizDao.getQuizWithAnswers()
-//    }
+    suspend fun getQuizWithAnswers(quizId: Int): QuizWithAnswers {
+        return quizDao.getQuizWithAnswers(quizId)
+    }
 //
 //    fun getAnswer(id: Int): Answer {
 //        return quizDao.getAnswer(id)
