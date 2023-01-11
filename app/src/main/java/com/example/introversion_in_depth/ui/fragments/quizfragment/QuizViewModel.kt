@@ -37,11 +37,6 @@ class QuizViewModel(
         CoroutineScope(Dispatchers.Default).launch {
             when(action) {
                 is QuizAction.MoveToNext -> {
-                    if(answers.size >= questions.size-1) {
-                        setState(QuizState.Finished)
-                        return@launch
-                    }
-
                     val answer = Answer(
                         quizId = quizId,
                         choice = action.userChoice.first,
@@ -74,6 +69,11 @@ class QuizViewModel(
                     currentIndex++
                     println("$currentIndex")
                     //if(currentIndex < answers.size)
+
+                    if(answers.size >= questions.size) {
+                        setState(QuizState.Finished)
+                        return@launch
+                    }
                     setState(QuizState.QuestionLoaded(
                         questions[currentIndex],
                         null,
@@ -103,6 +103,13 @@ class QuizViewModel(
                         null,
                         1
                     ))
+                }
+
+                QuizAction.DeleteQuiz -> {
+                    quizRepository.deleteAnswers(quizId)
+                    val quiz = withContext(Dispatchers.Default)
+                    { quizRepository.getQuiz(quizId) }
+                    quizRepository.deleteQuiz(quiz)
                 }
             }
         }

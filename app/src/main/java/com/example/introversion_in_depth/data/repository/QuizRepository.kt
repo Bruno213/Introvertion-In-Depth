@@ -7,14 +7,27 @@ import com.example.introversion_in_depth.data.local.dao.QuizDao
 import kotlinx.coroutines.flow.Flow
 
 class QuizRepository(private val quizDao: QuizDao) {
+
+    suspend fun getQuiz(quizId: Int): Quiz {
+        return quizDao.getQuiz(quizId)
+    }
+
     suspend fun insertQuiz(quiz: Quiz): Long {
         return quizDao.insertQuiz(quiz)
     }
 
-//    fun getQuiz(id: Int): Quiz {
-//        return quizDao.getQuiz(id)
-//    }
-//
+    suspend fun updateQuiz(quiz: Quiz) {
+        quizDao.updateQuiz(quiz)
+    }
+
+    suspend fun deleteQuiz(quiz: Quiz) {
+        quizDao.deleteQuiz(quiz)
+    }
+
+    suspend fun getQuizzesWithAnswers(): List<QuizWithAnswers> {
+        return quizDao.getQuizzesWithAnswers()
+    }
+
     suspend fun getQuizWithAnswers(quizId: Int): QuizWithAnswers {
         return quizDao.getQuizWithAnswers(quizId)
     }
@@ -31,6 +44,9 @@ class QuizRepository(private val quizDao: QuizDao) {
         quizDao.updateAnswer(answer)
     }
 
+    suspend fun deleteAnswers(quizId: Int) {
+        quizDao.deleteAnswers(quizId)
+    }
 
 //    fun getAnswerCount(): Int {
 //        return quizDao.getAnswersCount()

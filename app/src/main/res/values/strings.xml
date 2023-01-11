@@ -47,6 +47,7 @@
     <string name="quiz_progress">%d/40</string>
     <string name="warning">Are you sure that you wanna stop the quiz now? Your progress will be lost.</string>
     <string name="you_are_mostly_a">You are mostly a</string>
+    <string name="language">Language</string>
 
     <string-array name="questions">
         // Social Introversion

@@ -5,8 +5,8 @@
     <group
         android:checkableBehavior="single">
         <item
-            android:id="@+id/faq"
-            android:title="@string/about_the_test"
+            android:id="@+id/pick_language"
+            android:title="@string/language"
             app:showAsAction="ifRoom" />
 
         <item

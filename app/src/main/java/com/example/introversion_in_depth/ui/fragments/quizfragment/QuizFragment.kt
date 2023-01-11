@@ -30,6 +30,14 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
         QuizViewModel(this, appContext.appContainer.quizRepository)
     }
 
+    override fun setup() {
+        setListeners()
+        setBackButtonBehavior()
+
+        val questionsArray = resources.getStringArray(R.array.questions).asList()
+        viewModel.process(QuizAction.StartNewQuiz(questionsArray))
+    }
+
     override fun handleState(viewState: ViewState) {
         when(viewState) {
             QuizState.Finished -> {
@@ -60,6 +68,11 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
         }
     }
 
+    private fun setListeners() {
+        binding.btnNext.setOnClickListener(this)
+        binding.btnBack.setOnClickListener(this)
+    }
+
     private fun updateType(count: Int) {
         when {
             count <= 10 -> binding.introversionType.text = resources.getString(R.string.social)
@@ -67,19 +80,6 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
             count <= 30 -> binding.introversionType.text = resources.getString(R.string.anxious)
             count <= 40 -> binding.introversionType.text = resources.getString(R.string.restrained)
         }
-    }
-
-    override fun setup() {
-        setListeners()
-        setBackButtonBehavior()
-
-        val questionsArray = resources.getStringArray(R.array.questions).asList()
-        viewModel.process(QuizAction.StartNewQuiz(questionsArray))
-    }
-
-    private fun setListeners() {
-        binding.btnNext.setOnClickListener(this)
-        binding.btnBack.setOnClickListener(this)
     }
 
     private fun setBackButtonBehavior() {
@@ -90,6 +90,7 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                 val bind = DialogLeaveBinding.inflate(inflater)
                 dialogLeave.setContentView(bind.root)
                 bind.btnLeave.setOnClickListener {
+                    viewModel.process(QuizAction.DeleteQuiz)
                     findNavController().popBackStack()
                     dialogLeave.dismiss()
                 }

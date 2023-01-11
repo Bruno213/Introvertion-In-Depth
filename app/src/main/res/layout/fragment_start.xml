@@ -36,17 +36,6 @@
         app:layout_constraintGuide_percent="0.96" />
 
     <ImageView
-        android:id="@+id/language_picker"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:src="@drawable/ic_language_picker"
-        android:contentDescription="@string/icon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <ImageView
         android:id="@+id/dehaze"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -68,8 +57,7 @@
         android:text="@string/which_kind"
         app:layout_constraintTop_toTopOf="@id/guideline_top"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
-        />
+        app:layout_constraintStart_toStartOf="@id/guideline_start" />
 
     <TextView
         android:id="@+id/second_title"
@@ -100,8 +88,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
         app:layout_constraintBottom_toTopOf="@id/btn_start_quiz"
-        app:layout_constraintVertical_chainStyle="spread"
-        />
+        app:layout_constraintVertical_chainStyle="spread" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start_quiz"
@@ -117,8 +104,7 @@
         app:layout_constraintTop_toBottomOf="@id/image_logo"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintBottom_toTopOf="@id/about_the_test"
-        />
+        app:layout_constraintBottom_toTopOf="@id/about_the_test" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/results"
@@ -134,8 +120,7 @@
         app:layout_constraintTop_toTopOf="@id/about_the_test"
         app:layout_constraintEnd_toStartOf="@id/about_the_test"
         app:layout_constraintStart_toStartOf="@id/btn_start_quiz"
-        app:layout_constraintBottom_toBottomOf="@id/about_the_test"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/about_the_test" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/about_the_test"
@@ -151,8 +136,7 @@
         app:layout_constraintTop_toBottomOf="@id/btn_start_quiz"
         app:layout_constraintEnd_toEndOf="@id/btn_start_quiz"
         app:layout_constraintStart_toEndOf="@id/results"
-        app:layout_constraintBottom_toTopOf="@id/copyright_disclaimer"
-        />
+        app:layout_constraintBottom_toTopOf="@id/copyright_disclaimer" />
 
     <TextView
         android:id="@+id/copyright_disclaimer"
@@ -168,8 +152,7 @@
 
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline_start"
-        app:layout_constraintBottom_toTopOf="@id/link_to_article"
-        />
+        app:layout_constraintBottom_toTopOf="@id/link_to_article" />
 
     <TextView
         android:id="@+id/link_to_article"
@@ -184,6 +167,5 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
-        app:layout_constraintStart_toStartOf="@id/guideline_start"
-         />
+        app:layout_constraintStart_toStartOf="@id/guideline_start" />
 </androidx.constraintlayout.widget.ConstraintLayout>

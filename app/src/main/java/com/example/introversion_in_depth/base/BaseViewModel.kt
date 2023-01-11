@@ -24,6 +24,7 @@ abstract class BaseViewModel<state: ViewState, mviAction: MVIAction> : ViewModel
     private val _state = MutableStateFlow(ViewState())
     protected val state = _state.asStateFlow()
 
+
     protected abstract fun collect()
 
     abstract fun process(action: mviAction)

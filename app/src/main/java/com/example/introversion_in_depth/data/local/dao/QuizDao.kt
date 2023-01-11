@@ -8,11 +8,22 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface QuizDao {
+
+    @Query("SELECT * FROM quiz WHERE id == :quizId")
+    suspend fun getQuiz(quizId: Int): Quiz
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertQuiz(quiz: Quiz): Long
 
-    @Query("SELECT * FROM Quiz WHERE id == :id")
-    fun getQuiz(id: Int): Quiz
+    @Update
+    suspend fun updateQuiz(quiz: Quiz)
+
+    @Delete
+    suspend fun deleteQuiz(quiz: Quiz)
+
+    @Transaction
+    @Query("SELECT * FROM Quiz")
+    suspend fun getQuizzesWithAnswers(): List<QuizWithAnswers>
 
     @Transaction
     @Query("SELECT * FROM Quiz WHERE id == :quizId")
@@ -25,7 +36,10 @@ interface QuizDao {
     suspend fun insertAnswer(answer: Answer): Long
 
     @Update
-    fun updateAnswer(answer: Answer)
+    suspend fun updateAnswer(answer: Answer)
+
+    @Query("DELETE FROM answer WHERE quizId == :quizId")
+    suspend fun deleteAnswers(quizId: Int)
 
     @Query("SELECT count(*) from answer")
     fun getAnswersCount(): Int

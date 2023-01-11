@@ -21,6 +21,14 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
         ResultViewModel(this, appContext.appContainer.quizRepository)
     }
 
+    override fun setup() {
+        setListeners()
+        arguments?.let {
+            val quizId = it.getInt("quizId")
+            viewModel.process(ResultAction.ReckonResult(quizId))
+        }
+    }
+
     override fun handleState(viewState: ViewState) {
         when(viewState) {
             is ResultState.ResultReckoned -> {
@@ -54,14 +62,6 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
                 binding.restrainedScore.text  = resources.getString(R.string.score, viewState.data.restrainedScore)
                 binding.restrainedLevel.text = checkRestrainedLevel(viewState.data.restrainedScore)
             }
-        }
-    }
-
-    override fun setup() {
-        setListeners()
-        arguments?.let {
-            val quizId = it.getInt("quizId")
-            viewModel.process(ResultAction.ReckonResult(quizId))
         }
     }
 
