@@ -1,5 +1,6 @@
 package com.example.introversion_in_depth.data.repository
 
+import androidx.room.Query
 import com.example.introversion_in_depth.data.entities.Answer
 import com.example.introversion_in_depth.data.entities.Quiz
 import com.example.introversion_in_depth.data.entities.entityrelation.QuizWithAnswers
@@ -22,6 +23,11 @@ class QuizRepository(private val quizDao: QuizDao) {
 
     suspend fun deleteQuiz(quiz: Quiz) {
         quizDao.deleteQuiz(quiz)
+    }
+
+
+    suspend fun getQuizCount(): Int {
+        return quizDao.getQuizCount()
     }
 
     suspend fun getQuizzesWithAnswers(): List<QuizWithAnswers> {

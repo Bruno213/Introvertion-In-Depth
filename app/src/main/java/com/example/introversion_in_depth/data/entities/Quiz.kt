@@ -9,6 +9,7 @@ import com.example.introversion_in_depth.data.dataholders.QuizResult
 data class Quiz(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
+    val code: String = "",
     val startDate: String = "",
     @Embedded
     val result: QuizResult = QuizResult()

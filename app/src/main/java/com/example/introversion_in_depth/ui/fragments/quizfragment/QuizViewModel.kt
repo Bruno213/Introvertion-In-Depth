@@ -95,8 +95,10 @@ class QuizViewModel(
                 is QuizAction.StartNewQuiz -> {
                     questions = action.questions
 
-                    quizId = withContext(Dispatchers.Default)
-                    { quizRepository.insertQuiz(Quiz()).toInt() }
+                    quizId = withContext(Dispatchers.Default) {
+                        val count = quizRepository.getQuizCount() + 1
+                        quizRepository.insertQuiz(Quiz(code = count.toString())).toInt()
+                    }
 
                     setState(QuizState.QuestionLoaded(
                         questions[0],

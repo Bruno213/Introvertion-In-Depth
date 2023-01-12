@@ -21,6 +21,9 @@ interface QuizDao {
     @Delete
     suspend fun deleteQuiz(quiz: Quiz)
 
+    @Query("SELECT count(*) FROM quiz")
+    suspend fun getQuizCount(): Int
+
     @Transaction
     @Query("SELECT * FROM Quiz")
     suspend fun getQuizzesWithAnswers(): List<QuizWithAnswers>

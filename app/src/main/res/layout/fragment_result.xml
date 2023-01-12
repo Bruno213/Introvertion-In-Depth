@@ -61,7 +61,6 @@
                 android:textSize="18sp"
                 android:text="@string/you_are_mostly_a"/>
 
-
             <TextView
                 android:id="@+id/result"
                 android:layout_width="wrap_content"
@@ -72,8 +71,6 @@
                 android:textSize="23sp"
                 android:text="@string/r_social"
                 />
-
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -153,6 +150,7 @@
                 android:textSize="14sp"
                 android:text="@string/score"
                 />
+
             <TextView
                 android:id="@+id/anxious_level"
                 android:layout_width="wrap_content"
@@ -182,6 +180,7 @@
                 android:textSize="14sp"
                 android:text="@string/score"
                 />
+
             <TextView
                 android:id="@+id/restrained_level"
                 android:layout_width="wrap_content"

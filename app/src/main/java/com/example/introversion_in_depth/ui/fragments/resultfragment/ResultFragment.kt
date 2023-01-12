@@ -10,6 +10,7 @@ import com.example.introversion_in_depth.base.BaseFragment
 import com.example.introversion_in_depth.databinding.FragmentResultBinding
 import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.ViewState
+import com.example.introversion_in_depth.util.IntroversionMeter
 import com.example.introversion_in_depth.util.viewModelsFactory
 
 class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListener {
@@ -32,7 +33,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
     override fun handleState(viewState: ViewState) {
         when(viewState) {
             is ResultState.ResultReckoned -> {
-                viewModel.detectStrongerType(arrayOf(
+                IntroversionMeter.detectStrongerType(arrayOf(
                     viewState.data.socialScore,
                     viewState.data.thinkingScore,
                     viewState.data.anxiousScore,
@@ -51,16 +52,16 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
                 }
 
                 binding.socialScore.text  = resources.getString(R.string.score, viewState.data.socialScore)
-                binding.socialLevel.text = checkSocialLevel(viewState.data.socialScore)
+                binding.socialLevel.text = IntroversionMeter.checkSocialLevel(resources, viewState.data.socialScore)
 
                 binding.thinkingScore.text  = resources.getString(R.string.score, viewState.data.thinkingScore)
-                binding.thinkingLevel.text = checkThinkingLevel(viewState.data.thinkingScore)
+                binding.thinkingLevel.text = IntroversionMeter.checkThinkingLevel(resources, viewState.data.thinkingScore)
 
                 binding.anxiousScore.text  = resources.getString(R.string.score, viewState.data.anxiousScore)
-                binding.anxiousLevel.text = checkAnxiousLevel(viewState.data.anxiousScore)
+                binding.anxiousLevel.text = IntroversionMeter.checkAnxiousLevel(resources, viewState.data.anxiousScore)
 
                 binding.restrainedScore.text  = resources.getString(R.string.score, viewState.data.restrainedScore)
-                binding.restrainedLevel.text = checkRestrainedLevel(viewState.data.restrainedScore)
+                binding.restrainedLevel.text = IntroversionMeter.checkRestrainedLevel(resources, viewState.data.restrainedScore)
             }
         }
     }
@@ -84,45 +85,5 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
                 findNavController().popBackStack()
             }
         }
-    }
-
-    private fun checkSocialLevel(score: Int): String {
-        return resources.getString(
-            when {
-                score < 24 -> R.string.low
-                score <= 36 -> R.string.average
-                else -> R.string.low
-            }
-        )
-    }
-
-    private fun checkThinkingLevel(score: Int): String {
-        return resources.getString(
-            when {
-                score < 28 -> R.string.low
-                score <= 40 -> R.string.average
-                else -> R.string.high
-            }
-        )
-    }
-
-    private fun checkAnxiousLevel(score: Int): String {
-        return resources.getString(
-            when {
-                score < 23 -> R.string.low
-                score <= 37 -> R.string.average
-                else -> R.string.high
-            }
-        )
-    }
-
-    private fun checkRestrainedLevel(score: Int): String {
-        return resources.getString(
-            when {
-                score < 25 -> R.string.low
-                score <= 37 -> R.string.average
-                else -> R.string.high
-            }
-        )
     }
 }

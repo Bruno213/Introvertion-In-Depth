@@ -24,10 +24,6 @@ class StartViewModel(
         }.launchIn(viewModelScope)
     }
 
-    fun startCollection() {
-        collect()
-    }
-
     override fun process(action: StartAction) {
         CoroutineScope(Dispatchers.Default).launch {
             when (action) {
@@ -40,6 +36,14 @@ class StartViewModel(
                 }
 
                 StartAction.LoadResults -> {
+                    val quizCount = withContext(Dispatchers.Default)
+                    { quizRepository.getQuizCount() }
+
+                    if(quizCount == 0) {
+                        setState(StartState.NoResults)
+                        return@launch
+                    }
+
                     val results = withContext(Dispatchers.Default)
                     { quizRepository.getQuizzesWithAnswers() }
 

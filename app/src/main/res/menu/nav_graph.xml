@@ -9,9 +9,9 @@
             android:title="@string/language"
             app:showAsAction="ifRoom" />
 
-        <item
-            android:id="@+id/eachType"
-            android:title="@string/each_type"
-            app:showAsAction="ifRoom" />
+<!--        <item-->
+<!--            android:id="@+id/eachType"-->
+<!--            android:title="@string/each_type"-->
+<!--            app:showAsAction="ifRoom" />-->
     </group>
 </menu>

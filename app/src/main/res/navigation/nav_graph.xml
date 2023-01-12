@@ -18,11 +18,6 @@
             app:destination="@id/quiz" />
     </fragment>
     <fragment
-        android:id="@+id/eachType"
-        android:name="com.example.introversion_in_depth.ui.fragments.eachtypefragment.EachTypeFragment"
-        android:label="fragment_each_type"
-        tools:layout="@layout/fragment_each_type" />
-    <fragment
         android:id="@+id/faq"
         android:name="com.example.introversion_in_depth.ui.fragments.faqfragment.FaqFragment"
         android:label="fragment_faq_screen"
