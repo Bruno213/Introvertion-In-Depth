@@ -93,7 +93,6 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-
             }
         }
 

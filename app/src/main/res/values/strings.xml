@@ -46,9 +46,20 @@
     <string name="close">Close</string>
     <string name="question_placeholder">description</string>
     <string name="quiz_progress">%d/40</string>
-    <string name="warning">Are you sure that you wanna stop the quiz now? Your progress will be lost.</string>
+    <string name="warning">Are you sure that you want to stop the quiz now? Your progress will be lost.</string>
     <string name="you_are_mostly_a">You are mostly a</string>
     <string name="language">Language</string>
+
+    <string name="why_a_quiz">Why is there a quiz for this?</string>
+    <string name="types_of_introversion">Types of introversion</string>
+
+    <string name="how_is_it_calculated">To understand the relevance of this test, you can read the following article:<a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you</a>\n\nThere you will find the reasoning behind the creation of this test and also a description of how its result is calculated.</string>
+
+    <string name="each_type_definition">These definitions come from <a href="https://www.refinery29.com/en-gb/types-of-introverts">this</a> cool article.</string>
+    <string name="the_social_introvert">Social introverts favour solitude more than most people. Or, they tend to choose small groups of people over larger gatherings when they socialise. It\'s not that they can\'t enjoy themselves in social situations, but it speaks to their preference.\n\nThe main reason for this is that instead of feeling energised by others and their external surroundings like people that are extroverted, social introverts find that these situations drain their energy.</string>
+    <string name="the_thinking_introvert">Thinking introverts are highly introspective and creative. They don\'t need to recharge by themselves, but they do thrive creatively and mentally on their own, utilising \'me time\' to self-reflect and explore ideas internally.\n\nThese people aren\'t necessarily hyper-analytical but can get lost in their imagination, potentially coming off as a bit aloof when they\'re really just processing the question or situation. Oh, and they\'re prone to zoning out, so go easy on them. They tend to get mistaken as being passive because they\'re not quick to react but they\'re likely just digesting what\'s going on, and prefer to get back to people at a later time.</string>
+    <string name="the_anxious_introvert">The anxious introvert is often reserved, and may even appear on edge or nervous because they\'re quick to get stressed, particularly when tense situations arise.\n\nThese introverts will most likely avoid people and settings that exacerbate their anxiety. It might come off as avoidant or rude, but it\'s all just their protective defence mechanism at work. It doesn\'t mean they don\'t like company, but they\'re just aware of their comfort zones and don\'t like their boundaries crossed.</string>
+    <string name="the_restrained_introvert">Less about the mental side of introversion and more on the behavioural end, restrained introverts tend to be more guarded in their approach to life. This makes them practical and grounded; think responsible and careful over aloof and imaginative.\n\nBecause of their propensity to consider every outcome, they enjoy predictable activities and can detach from their emotions with ease.</string>
 
     <string-array name="questions">
         // Social Introversion
@@ -99,19 +110,4 @@
         <item>I sometimes do “crazy” things just to be different.</item>
         <item>I often feel sluggish.</item>
     </string-array>
-
-<!--    To find out your score for each of the four kinds of introversion,RECODE the following Reverse-Worded items: (1=5) (2=4) (4=2) (5=1):-->
-
-<!--    Social Introversion items: 2, 4, & 7-->
-<!--    Thinking Introversion item: 5-->
-<!--    Anxious Introversion items: 4, 6, & 7-->
-<!--    Restrained Introversion items: 1, 2, 4, 5, 6, 7, 8, & 9-->
-
-<!--    Next, add together all the numbers to come up with a total score.-->
-
-<!--    Here's a guide of how you scored compared to others in the general population:-->
-<!--    Social Introversion &#45;&#45; below 24 low, around 30 average, above 36 high-->
-<!--    Thinking Introversion &#45;&#45; below 28 low, around 34 average, above 40 high-->
-<!--    Anxious Introversion &#45;&#45; below 23 low, around 30 average, above 37 high-->
-<!--    Restrained Introversion &#45;&#45; below 25 low, around 31 average, above 37 high-->
 </resources>
