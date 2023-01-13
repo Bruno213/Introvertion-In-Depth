@@ -17,6 +17,7 @@ import com.example.introversion_in_depth.base.BaseFragment
 import com.example.introversion_in_depth.databinding.DialogLeaveBinding
 import com.example.introversion_in_depth.databinding.FragmentQuizBinding
 import com.example.introversion_in_depth.di.CustomApplication
+import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.viewModelsFactory
 
@@ -44,12 +45,26 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                 findNavController().currentDestination?.id?.let { destinationId ->
                     val navOptions = NavOptions.Builder()
                         .setPopUpTo(destinationId, true)
+                        .setEnterAnim(R.anim.fade_in)
                         .build()
 
                     findNavController().navigate(R.id.action_quiz_to_resultFragment,
                         Bundle().apply { putInt("quizId", viewModel.getQuizId()) },
                         navOptions)
                 }
+            }
+
+            QuizState.LeavingQuiz -> {
+                (activity as MainActivity).showLoading()
+                findNavController().popBackStack()
+            }
+
+            QuizState.Loading -> {
+                (activity as MainActivity).showLoading()
+            }
+
+            QuizState.Idle -> {
+                (activity as MainActivity).hideLoading()
             }
 
             is QuizState.QuestionLoaded -> {
@@ -90,8 +105,7 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                 val bind = DialogLeaveBinding.inflate(inflater)
                 dialogLeave.setContentView(bind.root)
                 bind.btnLeave.setOnClickListener {
-                    viewModel.process(QuizAction.DeleteQuiz)
-                    findNavController().popBackStack()
+                    viewModel.process(QuizAction.LeaveQuiz)
                     dialogLeave.dismiss()
                 }
                 bind.btnStay.setOnClickListener {

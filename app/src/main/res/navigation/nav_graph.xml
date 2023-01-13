@@ -11,17 +11,9 @@
         android:label="fragment_start_screen"
         tools:layout="@layout/fragment_start" >
         <action
-            android:id="@+id/action_start_to_faq"
-            app:destination="@id/faq" />
-        <action
             android:id="@+id/action_start_to_quizFragment"
             app:destination="@id/quiz" />
     </fragment>
-    <fragment
-        android:id="@+id/faq"
-        android:name="com.example.introversion_in_depth.ui.fragments.faqfragment.FaqFragment"
-        android:label="fragment_faq_screen"
-        tools:layout="@layout/fragment_faq" />
     <fragment
         android:id="@+id/quiz"
         android:name="com.example.introversion_in_depth.ui.fragments.quizfragment.QuizFragment"

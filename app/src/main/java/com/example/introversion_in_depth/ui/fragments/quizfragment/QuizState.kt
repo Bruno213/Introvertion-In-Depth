@@ -13,5 +13,9 @@ sealed class QuizState: ViewState() {
         val initialQuestion: Boolean = false
     ): QuizState()
 
+    object Loading: QuizState()
+    object Idle: QuizState()
+    object LeavingQuiz: QuizState()
+
     data class Error(val e: Throwable): QuizState()
 }

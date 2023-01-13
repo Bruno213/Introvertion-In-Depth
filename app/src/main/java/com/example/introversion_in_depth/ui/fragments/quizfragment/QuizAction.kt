@@ -6,5 +6,5 @@ sealed class QuizAction: MVIAction() {
     data class StartNewQuiz(val questions: List<String>): QuizAction()
     data class MoveToNext(val userChoice: Pair<String, Int>): QuizAction()
     object MoveToPrevious: QuizAction()
-    object DeleteQuiz: QuizAction()
+    object LeaveQuiz: QuizAction()
 }

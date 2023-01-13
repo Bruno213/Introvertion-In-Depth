@@ -1,6 +1,7 @@
 package com.example.introversion_in_depth.ui.fragments.resultfragment
 
 import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.example.introversion_in_depth.R
 import com.example.introversion_in_depth.base.BaseFragment
 import com.example.introversion_in_depth.databinding.FragmentResultBinding
 import com.example.introversion_in_depth.di.CustomApplication
+import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.IntroversionMeter
 import com.example.introversion_in_depth.util.viewModelsFactory
@@ -19,7 +21,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
 
     private val viewModel by viewModelsFactory {
         val appContext = (activity?.applicationContext as CustomApplication)
-        ResultViewModel(this, appContext.appContainer.quizRepository)
+        ResultViewModel(this, appContext.appContainer.quizRepository, appContext.appContainer.file)
     }
 
     override fun setup() {
@@ -62,6 +64,22 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
 
                 binding.restrainedScore.text  = resources.getString(R.string.score, viewState.data.restrainedScore)
                 binding.restrainedLevel.text = IntroversionMeter.checkRestrainedLevel(resources, viewState.data.restrainedScore)
+
+                viewModel.process(ResultAction.SetToIdle)
+            }
+
+            is ResultState.SharingResult -> {
+                viewState.data?.let {
+                    shareImageUri(it)
+                }
+            }
+
+            ResultState.LeavingResult -> {
+                findNavController().popBackStack()
+            }
+
+            ResultState.Idle -> {
+                (activity as MainActivity).hideLoading()
             }
         }
     }
@@ -71,18 +89,22 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
         binding.btnClose.setOnClickListener(this)
     }
 
+    private fun shareImageUri(uri: Uri) {
+        val sharingIntent = Intent(Intent.ACTION_SEND)
+        sharingIntent.type = "image/png"
+        sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+        sharingIntent.putExtra(Intent.EXTRA_STREAM, uri)
+        startActivity(Intent.createChooser(sharingIntent, "Share File"))
+    }
+
     override fun onClick(v: View) {
         when(v.id) {
             binding.btnShare.id -> {
-                val textEntry = "Just a POT (Plain Old Text)"
-                val sharingIntent = Intent(Intent.ACTION_SEND)
-                sharingIntent.type = "text/plain"
-                sharingIntent.putExtra(Intent.EXTRA_TEXT,textEntry)
-                startActivity(Intent.createChooser(sharingIntent, "Share File"))
+                viewModel.process(ResultAction.ShareResult(binding.resultContainer, requireContext()))
             }
 
             binding.btnClose.id -> {
-                findNavController().popBackStack()
+                viewModel.process(ResultAction.LeaveResult)
             }
         }
     }

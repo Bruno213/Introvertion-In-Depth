@@ -6,12 +6,9 @@ import com.example.introversion_in_depth.base.ViewStateHandler
 import com.example.introversion_in_depth.data.entities.Answer
 import com.example.introversion_in_depth.data.entities.Quiz
 import com.example.introversion_in_depth.data.repository.QuizRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class QuizViewModel(
     private val view: ViewStateHandler,
@@ -68,12 +65,15 @@ class QuizViewModel(
 
                     currentIndex++
                     println("$currentIndex")
-                    //if(currentIndex < answers.size)
 
                     if(answers.size >= questions.size) {
+                        setState(QuizState.Loading)
+                        delay(800)
                         setState(QuizState.Finished)
                         return@launch
                     }
+
+                    delay(200)
                     setState(QuizState.QuestionLoaded(
                         questions[currentIndex],
                         null,
@@ -105,13 +105,17 @@ class QuizViewModel(
                         null,
                         1
                     ))
+                    delay(300)
+                    setState(QuizState.Idle)
                 }
 
-                QuizAction.DeleteQuiz -> {
+                QuizAction.LeaveQuiz -> {
                     quizRepository.deleteAnswers(quizId)
                     val quiz = withContext(Dispatchers.Default)
                     { quizRepository.getQuiz(quizId) }
                     quizRepository.deleteQuiz(quiz)
+
+                    setState(QuizState.LeavingQuiz)
                 }
             }
         }

@@ -9,12 +9,15 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
+import android.widget.TextView
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.introversion_in_depth.R
 import com.example.introversion_in_depth.base.BaseFragment
 import com.example.introversion_in_depth.data.dataholders.QuizResult
 import com.example.introversion_in_depth.databinding.FragmentStartBinding
 import com.example.introversion_in_depth.databinding.ResultsLayoutBinding
+import com.example.introversion_in_depth.databinding.TestInfoLayoutBinding
 import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
@@ -27,22 +30,14 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentStartBinding
         get() = FragmentStartBinding::inflate
 
-    private val viewModel by viewModelsFactory{
+    private val viewModel by viewModelsFactory {
         StartViewModel(this, (activity?.applicationContext as CustomApplication).appContainer.quizRepository)
     }
 
     override fun setup() {
         setupListeners()
-        enableLink()
+        enableLink(binding.linkToArticle)
     }
-
-    /**
-     * Save list with answers
-     * when requesting answers from db, check answers count to see if count has changed
-     * Update variable that holds the list only if the count has changed
-     * when loading results dialog, get list and adapter from viewModel and bind adapter to spinner
-     *
-     * **/
 
     override fun handleState(viewState: ViewState) {
         when (viewState) {
@@ -53,9 +48,33 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
             StartState.NoResults -> {
                 Snackbar.make((activity as MainActivity).findViewById(android.R.id.content),
                     R.string.no_results, Snackbar.LENGTH_SHORT).show()
-                viewModel.process(StartAction.SetToIdle)
+            }
+
+            StartState.TestInfoLoaded -> {
+                loadTestInfoDialog()
+            }
+
+            StartState.OpeningQuiz -> {
+                val navOptions = NavOptions.Builder()
+                    .setEnterAnim(R.anim.fade_in)
+                    .build()
+
+                findNavController().navigate(R.id.action_start_to_quizFragment, null, navOptions)
+            }
+
+            StartState.Loading -> {
+                (activity as MainActivity).showLoading()
+            }
+
+            StartState.Idle -> {
+                (activity as MainActivity).hideLoading()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.process(StartAction.SetToIdle)
     }
 
     private fun setupListeners() {
@@ -66,6 +85,28 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
         binding.aboutTheTest.setOnClickListener(this)
     }
 
+    private fun loadTestInfoDialog() {
+        val dialogTestInfo = Dialog(requireContext(), R.style.NewDialog)
+        val inflater =
+            requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val bind = TestInfoLayoutBinding.inflate(inflater)
+        dialogTestInfo.setContentView(bind.root)
+        dialogTestInfo.setCancelable(false)
+
+        enableLink(bind.linkToTypesArticle)
+        enableLink(bind.whyThisQuizArticle)
+
+        bind.root.setOnClickListener {
+            dialogTestInfo.dismiss()
+        }
+
+        bind.btnClose.setOnClickListener {
+            dialogTestInfo.dismiss()
+        }
+
+        dialogTestInfo.show()
+    }
+
     private fun loadResultsDialog(viewState: StartState.ResultsLoaded) {
         val dialogResults = Dialog(requireContext(), R.style.NewDialog)
         val inflater =
@@ -73,7 +114,6 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
         val bind = ResultsLayoutBinding.inflate(inflater)
         dialogResults.setContentView(bind.root)
         dialogResults.setCancelable(false)
-
 
         val results = viewState.results
         val items = results.map { "Quiz ${it.quiz.code}" }
@@ -100,12 +140,10 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
 
         bind.root.setOnClickListener {
             dialogResults.dismiss()
-            viewModel.process(StartAction.SetToIdle)
         }
 
         bind.btnClose.setOnClickListener {
             dialogResults.dismiss()
-            viewModel.process(StartAction.SetToIdle)
         }
 
         dialogResults.show()
@@ -125,9 +163,9 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
         bind.restrainedLevel.text = IntroversionMeter.checkRestrainedLevel(resources, result.restrainedScore)
     }
 
-    private fun enableLink() {
-        binding.linkToArticle.movementMethod = LinkMovementMethod.getInstance()
-        binding.linkToArticle.removeLinksUnderline()
+    private fun enableLink(textView: TextView) {
+        textView.movementMethod = LinkMovementMethod.getInstance()
+        textView.removeLinksUnderline()
     }
 
     override fun onClick(v: View) {
@@ -136,13 +174,13 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
 
 //            binding.languagePicker.id -> {}
             binding.btnStartQuiz.id -> {
-                findNavController().navigate(R.id.action_start_to_quizFragment)
+                viewModel.process(StartAction.LoadQuiz)
             }
 
             binding.results.id -> viewModel.process(StartAction.LoadResults)
 
             binding.aboutTheTest.id -> {
-                findNavController().navigate(R.id.action_start_to_faq)
+                viewModel.process(StartAction.LoadTestInfo)
             }
         }
     }

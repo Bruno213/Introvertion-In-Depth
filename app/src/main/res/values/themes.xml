@@ -24,12 +24,16 @@
     <style name="NewDialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowAnimationStyle">@style/dialogAnimation</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:windowMinWidthMajor">80%</item>
         <item name="android:windowMinWidthMinor">80%</item>
+    </style>
+
+    <style name="dialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
     </style>
 
     <!--    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">-->

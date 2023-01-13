@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.introversion_in_depth.data.local.AppDatabase
 import com.example.introversion_in_depth.data.repository.QuizRepository
+import java.io.File
 
 class AppContainer(applicationContext: Context) {
     val quizRepository by lazy {
@@ -12,5 +13,9 @@ class AppContainer(applicationContext: Context) {
             .build()
 
         QuizRepository(appDatabase.getQuizDao())
+    }
+
+    val file: File by lazy {
+        File(applicationContext.cacheDir, "images")
     }
 }
