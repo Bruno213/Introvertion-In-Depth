@@ -6,6 +6,7 @@
     <string name="start_quiz">Start Quiz</string>
     <string name="results">Results</string>
     <string name="no_results">No results to show</string>
+    <string name="must_select">Please, select one option to proceed</string>
     <string name="about_the_test">About the test</string>
     <string name="copyright_disclaimer">Content for this test was taken \ndirectly from this article:</string>
     <string name="link_to_article">

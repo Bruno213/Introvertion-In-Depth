@@ -1,6 +1,5 @@
 package com.example.introversion_in_depth.ui.fragments.resultfragment
 
-import android.graphics.Bitmap
 import android.net.Uri
 import com.example.introversion_in_depth.data.dataholders.QuizResult
 import com.example.introversion_in_depth.ui.ViewState

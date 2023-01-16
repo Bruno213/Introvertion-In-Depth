@@ -23,6 +23,7 @@ import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.IntroversionMeter
 import com.example.introversion_in_depth.util.removeLinksUnderline
+import com.example.introversion_in_depth.util.shareImageUri
 import com.example.introversion_in_depth.util.viewModelsFactory
 import com.google.android.material.snackbar.Snackbar
 
@@ -31,7 +32,8 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
         get() = FragmentStartBinding::inflate
 
     private val viewModel by viewModelsFactory {
-        StartViewModel(this, (activity?.applicationContext as CustomApplication).appContainer.quizRepository)
+        val appContext = (activity?.applicationContext as CustomApplication)
+        StartViewModel(this, appContext.appContainer.quizRepository, appContext.appContainer.file)
     }
 
     override fun setup() {
@@ -60,6 +62,12 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
                     .build()
 
                 findNavController().navigate(R.id.action_start_to_quizFragment, null, navOptions)
+            }
+
+            is StartState.SharingResult -> {
+                viewState.data?.let {
+                    shareImageUri(requireContext(), it)
+                }
             }
 
             StartState.Loading -> {
@@ -140,6 +148,10 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
 
         bind.root.setOnClickListener {
             dialogResults.dismiss()
+        }
+
+        bind.btnShare.setOnClickListener {
+            viewModel.process(StartAction.ShareResult(bind.resultContainer, requireContext()))
         }
 
         bind.btnClose.setOnClickListener {

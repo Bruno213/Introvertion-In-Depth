@@ -5,13 +5,17 @@ import com.example.introversion_in_depth.base.BaseViewModel
 import com.example.introversion_in_depth.base.ViewStateHandler
 import com.example.introversion_in_depth.data.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.data.repository.QuizRepository
+import com.example.introversion_in_depth.util.saveImage
+import com.example.introversion_in_depth.util.screenShot
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import java.io.File
 
 class StartViewModel(
     private val view:ViewStateHandler,
-    private val quizRepository: QuizRepository
+    private val quizRepository: QuizRepository,
+    private val file: File
 ): BaseViewModel<StartState, StartAction>() {
 
     private var count = 0
@@ -75,6 +79,14 @@ class StartViewModel(
 
                     setState(StartState.ResultsLoaded(results))
                     process(StartAction.SetToIdle)
+                }
+
+                is StartAction.ShareResult -> {
+                   setState(
+                       StartState.SharingResult(
+                           saveImage(file, action.context, screenShot(action.view))
+                       )
+                   )
                 }
             }
         }

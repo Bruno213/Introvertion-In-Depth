@@ -20,6 +20,7 @@ import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.viewModelsFactory
+import com.google.android.material.snackbar.Snackbar
 
 class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
 
@@ -123,7 +124,9 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
         when(v.id) {
             binding.btnNext.id -> {
                 val rbId = binding.radioGroup.checkedRadioButtonId
-                binding.radioGroup.findViewById<AppCompatRadioButton>(rbId)?.let { checkedBtn ->
+                val checkedBtn = binding.radioGroup.findViewById<AppCompatRadioButton>(rbId)
+
+                if(checkedBtn != null) {
                     viewModel.process(
                         QuizAction.MoveToNext(
                             Pair(
@@ -132,6 +135,10 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                             )
                         )
                     )
+                } else {
+                    Snackbar.make((activity as MainActivity).findViewById(android.R.id.content),
+                        R.string.must_select, Snackbar.LENGTH_SHORT)
+                        .show()
                 }
             }
 

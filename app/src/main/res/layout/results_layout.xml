@@ -28,11 +28,10 @@
             app:layout_constraintBottom_toTopOf="@id/btn_share"
             >
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="30dp"
-                android:gravity="center"
                 android:orientation="vertical"
                 >
 
@@ -51,7 +50,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
-
                 <Spinner
                     android:id="@+id/results_spinner"
                     android:layout_width="match_parent"
@@ -62,114 +60,139 @@
                     android:textAlignment="center"
                     android:background="@drawable/bg_outer_space"
                     android:backgroundTint="@null"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/resultContainer"
                     />
 
-                <TextView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="@string/social" />
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_arrow_drop_down"
+                    app:layout_constraintEnd_toEndOf="@id/results_spinner"
+                    app:layout_constraintTop_toTopOf="@id/results_spinner"
+                    app:layout_constraintBottom_toBottomOf="@id/results_spinner"/>
 
-                <TextView
-                    android:id="@+id/social_score"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/resultContainer"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#98DFFB"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/score" />
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/results_spinner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
-                <TextView
-                    android:id="@+id/social_level"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#98DFFB"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/level" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="@string/social" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="@string/thinking" />
+                    <TextView
+                        android:id="@+id/social_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#98DFFB"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/score" />
 
-                <TextView
-                    android:id="@+id/thinking_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#FBC698"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/score" />
+                    <TextView
+                        android:id="@+id/social_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#98DFFB"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/level" />
 
-                <TextView
-                    android:id="@+id/thinking_level"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#FBC098"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/level" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="@string/thinking" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="@string/anxious" />
+                    <TextView
+                        android:id="@+id/thinking_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FBC698"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/score" />
 
-                <TextView
-                    android:id="@+id/anxious_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#FBEE98"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/score" />
-                <TextView
-                    android:id="@+id/anxious_level"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#FBEE98"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/level" />
+                    <TextView
+                        android:id="@+id/thinking_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FBC098"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/level" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:text="@string/restrained" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="@string/anxious" />
 
-                <TextView
-                    android:id="@+id/restrained_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#98FBD3"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/score" />
+                    <TextView
+                        android:id="@+id/anxious_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FBEE98"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/score" />
+                    <TextView
+                        android:id="@+id/anxious_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FBEE98"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/level" />
 
-                <TextView
-                    android:id="@+id/restrained_level"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#98FBD3"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:text="@string/level" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="@string/restrained" />
+
+                    <TextView
+                        android:id="@+id/restrained_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#98FBD3"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/score" />
+
+                    <TextView
+                        android:id="@+id/restrained_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#98FBD3"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:text="@string/level" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
 

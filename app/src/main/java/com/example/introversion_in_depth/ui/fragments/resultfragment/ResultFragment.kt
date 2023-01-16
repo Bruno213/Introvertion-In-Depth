@@ -1,7 +1,5 @@
 package com.example.introversion_in_depth.ui.fragments.resultfragment
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +11,7 @@ import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.IntroversionMeter
+import com.example.introversion_in_depth.util.shareImageUri
 import com.example.introversion_in_depth.util.viewModelsFactory
 
 class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListener {
@@ -70,7 +69,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
 
             is ResultState.SharingResult -> {
                 viewState.data?.let {
-                    shareImageUri(it)
+                    shareImageUri(requireContext(), it)
                 }
             }
 
@@ -87,14 +86,6 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
     private fun setListeners() {
         binding.btnShare.setOnClickListener(this)
         binding.btnClose.setOnClickListener(this)
-    }
-
-    private fun shareImageUri(uri: Uri) {
-        val sharingIntent = Intent(Intent.ACTION_SEND)
-        sharingIntent.type = "image/png"
-        sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        sharingIntent.putExtra(Intent.EXTRA_STREAM, uri)
-        startActivity(Intent.createChooser(sharingIntent, "Share File"))
     }
 
     override fun onClick(v: View) {

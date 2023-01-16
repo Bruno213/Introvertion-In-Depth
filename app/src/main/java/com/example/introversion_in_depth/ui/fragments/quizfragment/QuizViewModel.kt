@@ -103,7 +103,8 @@ class QuizViewModel(
                     setState(QuizState.QuestionLoaded(
                         questions[0],
                         null,
-                        1
+                        1,
+                        true
                     ))
                     delay(300)
                     setState(QuizState.Idle)
