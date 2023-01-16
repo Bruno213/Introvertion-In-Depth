@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.introversion_in_depth.R
-import com.example.introversion_in_depth.base.BaseFragment
+import com.example.introversion_in_depth.ui.fragments.base.BaseFragment
 import com.example.introversion_in_depth.databinding.FragmentResultBinding
 import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.MainActivity

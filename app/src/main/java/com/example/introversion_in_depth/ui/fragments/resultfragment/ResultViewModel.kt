@@ -1,8 +1,8 @@
 package com.example.introversion_in_depth.ui.fragments.resultfragment
 
 import androidx.lifecycle.viewModelScope
-import com.example.introversion_in_depth.base.BaseViewModel
-import com.example.introversion_in_depth.base.ViewStateHandler
+import com.example.introversion_in_depth.ui.fragments.base.BaseViewModel
+import com.example.introversion_in_depth.ui.fragments.base.ViewStateHandler
 import com.example.introversion_in_depth.data.dataholders.QuizResult
 import com.example.introversion_in_depth.data.repository.QuizRepository
 import com.example.introversion_in_depth.util.IntroversionMeter
@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.onEach
 import java.io.File
 
 class ResultViewModel(
-    private val view:ViewStateHandler,
+    private val view: ViewStateHandler,
     private val quizRepository: QuizRepository,
     private val file: File
     ): BaseViewModel<ResultState, ResultAction>() {

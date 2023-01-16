@@ -1,4 +1,4 @@
-package com.example.introversion_in_depth.base
+package com.example.introversion_in_depth.ui.fragments.base
 
 import androidx.lifecycle.ViewModel
 import com.example.introversion_in_depth.ui.MVIAction

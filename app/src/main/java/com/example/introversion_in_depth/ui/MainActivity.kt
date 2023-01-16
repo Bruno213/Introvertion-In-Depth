@@ -7,7 +7,7 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
-import com.example.introversion_in_depth.base.BaseActivity
+import com.example.introversion_in_depth.ui.fragments.base.BaseActivity
 import com.example.introversion_in_depth.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {

@@ -1,8 +1,8 @@
 package com.example.introversion_in_depth.ui.fragments.startFragment
 
 import androidx.lifecycle.viewModelScope
-import com.example.introversion_in_depth.base.BaseViewModel
-import com.example.introversion_in_depth.base.ViewStateHandler
+import com.example.introversion_in_depth.ui.fragments.base.BaseViewModel
+import com.example.introversion_in_depth.ui.fragments.base.ViewStateHandler
 import com.example.introversion_in_depth.data.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.data.repository.QuizRepository
 import com.example.introversion_in_depth.util.saveImage
@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.onEach
 import java.io.File
 
 class StartViewModel(
-    private val view:ViewStateHandler,
+    private val view: ViewStateHandler,
     private val quizRepository: QuizRepository,
     private val file: File
 ): BaseViewModel<StartState, StartAction>() {
