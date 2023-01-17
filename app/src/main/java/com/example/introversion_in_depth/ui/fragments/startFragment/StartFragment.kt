@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.introversion_in_depth.R
-import com.example.introversion_in_depth.ui.fragments.base.BaseFragment
+import com.example.introversion_in_depth.base.BaseFragment
 import com.example.introversion_in_depth.data.dataholders.QuizResult
 import com.example.introversion_in_depth.databinding.FragmentStartBinding
 import com.example.introversion_in_depth.databinding.ResultsLayoutBinding

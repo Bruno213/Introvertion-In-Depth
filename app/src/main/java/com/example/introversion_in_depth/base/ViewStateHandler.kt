@@ -1,4 +1,4 @@
-package com.example.introversion_in_depth.ui.fragments.base
+package com.example.introversion_in_depth.base
 
 import com.example.introversion_in_depth.ui.ViewState
 

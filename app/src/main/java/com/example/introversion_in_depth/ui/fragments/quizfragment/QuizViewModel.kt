@@ -1,8 +1,8 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
 import androidx.lifecycle.viewModelScope
-import com.example.introversion_in_depth.ui.fragments.base.BaseViewModel
-import com.example.introversion_in_depth.ui.fragments.base.ViewStateHandler
+import com.example.introversion_in_depth.base.BaseViewModel
+import com.example.introversion_in_depth.base.ViewStateHandler
 import com.example.introversion_in_depth.data.entities.Answer
 import com.example.introversion_in_depth.data.entities.Quiz
 import com.example.introversion_in_depth.data.repository.QuizRepository

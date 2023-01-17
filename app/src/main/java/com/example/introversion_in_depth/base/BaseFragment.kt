@@ -1,4 +1,4 @@
-package com.example.introversion_in_depth.ui.fragments.base
+package com.example.introversion_in_depth.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
