@@ -61,6 +61,9 @@
     <string name="the_thinking_introvert">Thinking introverts are highly introspective and creative. They don\'t need to recharge by themselves, but they do thrive creatively and mentally on their own, utilising \'me time\' to self-reflect and explore ideas internally.\n\nThese people aren\'t necessarily hyper-analytical but can get lost in their imagination, potentially coming off as a bit aloof when they\'re really just processing the question or situation. Oh, and they\'re prone to zoning out, so go easy on them. They tend to get mistaken as being passive because they\'re not quick to react but they\'re likely just digesting what\'s going on, and prefer to get back to people at a later time.</string>
     <string name="the_anxious_introvert">The anxious introvert is often reserved, and may even appear on edge or nervous because they\'re quick to get stressed, particularly when tense situations arise.\n\nThese introverts will most likely avoid people and settings that exacerbate their anxiety. It might come off as avoidant or rude, but it\'s all just their protective defence mechanism at work. It doesn\'t mean they don\'t like company, but they\'re just aware of their comfort zones and don\'t like their boundaries crossed.</string>
     <string name="the_restrained_introvert">Less about the mental side of introversion and more on the behavioural end, restrained introverts tend to be more guarded in their approach to life. This makes them practical and grounded; think responsible and careful over aloof and imaginative.\n\nBecause of their propensity to consider every outcome, they enjoy predictable activities and can detach from their emotions with ease.</string>
+    <string name="continuation_question">It seems there\'s an unfinished test. Would you like to continue it?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
     <string-array name="questions">
         // Social Introversion

@@ -1,12 +1,10 @@
-package com.example.introversion_in_depth.data.local
+package com.example.introversion_in_depth.domain.datalayer.local
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.introversion_in_depth.data.entities.Answer
-import com.example.introversion_in_depth.data.entities.Quiz
-import com.example.introversion_in_depth.data.local.dao.QuizDao
+import com.example.introversion_in_depth.domain.datalayer.entities.Answer
+import com.example.introversion_in_depth.domain.datalayer.entities.Quiz
+import com.example.introversion_in_depth.domain.datalayer.local.dao.QuizDao
 
 @Database(version = 1, exportSchema = false, entities = [Quiz::class, Answer::class])
 abstract class AppDatabase: RoomDatabase() {

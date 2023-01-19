@@ -1,4 +1,4 @@
-package com.example.introversion_in_depth.data.entities
+package com.example.introversion_in_depth.domain.datalayer.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

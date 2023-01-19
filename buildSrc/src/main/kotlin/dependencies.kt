@@ -29,9 +29,6 @@ object Versions {
 
     const val coroutines = "1.6.4"
 
-    const val workManager = "2.7.1"
-
-
     const val roomRunTime  = "2.4.3"
     const val roomKtx  = "2.4.3"
     const val roomCompiler = "2.4.3"
@@ -61,9 +58,6 @@ object Libs {
 
     //Coroutines
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
-
-    // WorkManager
-    const val workManager = "androidx.work:work-runtime-ktx:${Versions.workManager}"
 
     // Room
     const val roomRunTime = "androidx.room:room-runtime:${Versions.roomRunTime}"

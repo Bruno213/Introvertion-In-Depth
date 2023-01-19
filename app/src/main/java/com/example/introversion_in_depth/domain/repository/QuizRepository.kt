@@ -1,11 +1,9 @@
-package com.example.introversion_in_depth.data.repository
+package com.example.introversion_in_depth.domain.repository
 
-import androidx.room.Query
-import com.example.introversion_in_depth.data.entities.Answer
-import com.example.introversion_in_depth.data.entities.Quiz
-import com.example.introversion_in_depth.data.entities.entityrelation.QuizWithAnswers
-import com.example.introversion_in_depth.data.local.dao.QuizDao
-import kotlinx.coroutines.flow.Flow
+import com.example.introversion_in_depth.domain.datalayer.entities.Answer
+import com.example.introversion_in_depth.domain.datalayer.entities.Quiz
+import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
+import com.example.introversion_in_depth.domain.datalayer.local.dao.QuizDao
 
 class QuizRepository(private val quizDao: QuizDao) {
 

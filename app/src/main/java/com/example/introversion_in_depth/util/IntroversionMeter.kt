@@ -2,7 +2,7 @@ package com.example.introversion_in_depth.util
 
 import android.content.res.Resources
 import com.example.introversion_in_depth.R
-import com.example.introversion_in_depth.data.entities.Answer
+import com.example.introversion_in_depth.domain.datalayer.entities.Answer
 
 object IntroversionMeter {
 

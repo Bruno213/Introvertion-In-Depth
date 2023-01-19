@@ -61,8 +61,7 @@ dependencies {
     implementation(Libs.lifecycle)
     //Coroutines
     implementation(Libs.coroutines)
-    //WorkManager
-    implementation(Libs.workManager)
+
     //Room
     implementation(Libs.roomRunTime)
     implementation(Libs.roomKtx)

@@ -13,7 +13,8 @@ import androidx.core.view.isVisible
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.introversion_in_depth.R
-import com.example.introversion_in_depth.base.BaseFragment
+import com.example.introversion_in_depth.databinding.DialogContinueQuizBinding
+import com.example.introversion_in_depth.domain.contracts.BaseFragment
 import com.example.introversion_in_depth.databinding.DialogLeaveBinding
 import com.example.introversion_in_depth.databinding.FragmentQuizBinding
 import com.example.introversion_in_depth.di.CustomApplication
@@ -30,14 +31,6 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
     private val viewModel by viewModelsFactory {
         val appContext = (activity?.applicationContext as CustomApplication)
         QuizViewModel(this, appContext.appContainer.quizRepository)
-    }
-
-    override fun setup() {
-        setListeners()
-        setBackButtonBehavior()
-
-        val questionsArray = resources.getStringArray(R.array.questions).asList()
-        viewModel.process(QuizAction.StartNewQuiz(questionsArray))
     }
 
     override fun handleState(viewState: ViewState) {
@@ -68,6 +61,10 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                 (activity as MainActivity).hideLoading()
             }
 
+            QuizState.ContinuationPopupLoaded -> {
+                loadContinuationDialog()
+            }
+
             is QuizState.QuestionLoaded -> {
                 binding.question.text = viewState.question
                 binding.radioGroup.clearCheck()
@@ -82,6 +79,11 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                 binding.btnBack.isVisible = !viewState.initialQuestion
             }
         }
+    }
+
+    override fun setup() {
+        setListeners()
+        setBackButtonBehavior()
     }
 
     private fun setListeners() {
@@ -101,23 +103,46 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
     private fun setBackButtonBehavior() {
         val onBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                val dialogLeave = Dialog(requireContext(), R.style.NewDialog)
-                val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                val bind = DialogLeaveBinding.inflate(inflater)
-                dialogLeave.setContentView(bind.root)
-                bind.btnLeave.setOnClickListener {
-                    viewModel.process(QuizAction.LeaveQuiz)
-                    dialogLeave.dismiss()
-                }
-                bind.btnStay.setOnClickListener {
-                    dialogLeave.dismiss()
-                }
-
-                dialogLeave.show()
+                loadLeaveDialog()
             }
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, onBackPressedCallback)
+    }
+
+    private fun loadLeaveDialog() {
+        val dialogLeave = Dialog(requireContext(), R.style.NewDialog)
+        val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val bind = DialogLeaveBinding.inflate(inflater)
+        dialogLeave.setContentView(bind.root)
+        bind.btnLeave.setOnClickListener {
+            viewModel.process(QuizAction.LeaveQuiz)
+            dialogLeave.dismiss()
+        }
+        bind.btnStay.setOnClickListener {
+            dialogLeave.dismiss()
+        }
+
+        dialogLeave.show()
+    }
+
+    private fun loadContinuationDialog() {
+        val dialogContinue = Dialog(requireContext(), R.style.NewDialog)
+        val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val bind = DialogContinueQuizBinding.inflate(inflater)
+        dialogContinue.setContentView(bind.root)
+        val questionsArray = resources.getStringArray(R.array.questions).asList()
+
+        bind.btnNo.setOnClickListener {
+            dialogContinue.dismiss()
+            viewModel.process(QuizAction.InitQuiz(questionsArray))
+        }
+        bind.btnYes.setOnClickListener {
+            dialogContinue.dismiss()
+            viewModel.process(QuizAction.InitQuiz(questionsArray))
+        }
+
+        dialogContinue.show()
     }
 
     override fun onClick(v: View) {

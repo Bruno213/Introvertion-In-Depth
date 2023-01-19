@@ -1,11 +1,11 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
 import androidx.lifecycle.viewModelScope
-import com.example.introversion_in_depth.base.BaseViewModel
-import com.example.introversion_in_depth.base.ViewStateHandler
-import com.example.introversion_in_depth.data.entities.Answer
-import com.example.introversion_in_depth.data.entities.Quiz
-import com.example.introversion_in_depth.data.repository.QuizRepository
+import com.example.introversion_in_depth.domain.contracts.BaseViewModel
+import com.example.introversion_in_depth.domain.interfaces.ViewStateHandler
+import com.example.introversion_in_depth.domain.datalayer.entities.Answer
+import com.example.introversion_in_depth.domain.datalayer.entities.Quiz
+import com.example.introversion_in_depth.domain.repository.QuizRepository
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -92,22 +92,42 @@ class QuizViewModel(
                     ))
                 }
 
-                is QuizAction.StartNewQuiz -> {
+                is QuizAction.InitQuiz -> {
                     questions = action.questions
 
-                    quizId = withContext(Dispatchers.Default) {
-                        val count = quizRepository.getQuizCount() + 1
-                        quizRepository.insertQuiz(Quiz(code = count.toString())).toInt()
+                    if(!action.restore) {
+                        quizId = withContext(Dispatchers.Default) {
+                            val count = quizRepository.getQuizCount() + 1
+                            quizRepository.insertQuiz(Quiz(code = count.toString())).toInt()
+                        }
+
+                        setState(QuizState.QuestionLoaded(
+                            questions[0],
+                            null,
+                            1,
+                            true
+                        ))
+
+                    } else {
+                        quizId = withContext(Dispatchers.Default) {
+                            val count = quizRepository.getQuizCount() + 1
+                            quizRepository.insertQuiz(Quiz(code = count.toString())).toInt()
+                        }
+
+                        setState(QuizState.QuestionLoaded(
+                            questions[0],
+                            null,
+                            1,
+                            true
+                        ))
                     }
 
-                    setState(QuizState.QuestionLoaded(
-                        questions[0],
-                        null,
-                        1,
-                        true
-                    ))
                     delay(300)
                     setState(QuizState.Idle)
+                }
+
+                QuizAction.ShowContinuationPopup -> {
+                    setState(QuizState.ContinuationPopupLoaded)
                 }
 
                 QuizAction.LeaveQuiz -> {

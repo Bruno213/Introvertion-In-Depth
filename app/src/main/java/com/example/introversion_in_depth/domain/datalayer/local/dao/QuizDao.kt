@@ -1,10 +1,9 @@
-package com.example.introversion_in_depth.data.local.dao
+package com.example.introversion_in_depth.domain.datalayer.local.dao
 
 import androidx.room.*
-import com.example.introversion_in_depth.data.entities.Answer
-import com.example.introversion_in_depth.data.entities.Quiz
-import com.example.introversion_in_depth.data.entities.entityrelation.QuizWithAnswers
-import kotlinx.coroutines.flow.Flow
+import com.example.introversion_in_depth.domain.datalayer.entities.Answer
+import com.example.introversion_in_depth.domain.datalayer.entities.Quiz
+import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
 
 @Dao
 interface QuizDao {

@@ -1,10 +1,11 @@
-package com.example.introversion_in_depth.base
+package com.example.introversion_in_depth.domain.contracts
 
 import androidx.lifecycle.ViewModel
 import com.example.introversion_in_depth.ui.MVIAction
 import com.example.introversion_in_depth.ui.ViewState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 abstract class BaseViewModel<state: ViewState, mviAction: MVIAction> : ViewModel() {
 

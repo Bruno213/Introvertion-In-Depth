@@ -1,4 +1,4 @@
-package com.example.introversion_in_depth.base
+package com.example.introversion_in_depth.domain.interfaces
 
 import com.example.introversion_in_depth.ui.ViewState
 
