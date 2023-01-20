@@ -86,8 +86,7 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
     }
 
     private fun setupListeners() {
-        binding.dehaze.setOnClickListener(this)
-//        binding.languagePicker.setOnClickListener(this)
+        binding.language.setOnClickListener(this)
         binding.btnStartQuiz.setOnClickListener(this)
         binding.results.setOnClickListener(this)
         binding.aboutTheTest.setOnClickListener(this)
@@ -182,9 +181,16 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
 
     override fun onClick(v: View) {
         when(v.id) {
-            binding.dehaze.id -> (activity as MainActivity).toggleDrawer()
+            binding.language.id -> (activity as MainActivity).toggleDrawer()
 
-//            binding.languagePicker.id -> {}
+            binding.enOp.id -> {
+
+            }
+
+            binding.ptBrOp.id -> {
+
+            }
+
             binding.btnStartQuiz.id -> {
                 viewModel.process(StartAction.LoadQuiz)
             }

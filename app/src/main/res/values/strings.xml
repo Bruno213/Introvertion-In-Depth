@@ -1,117 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Introversion-In-Depth</string>
 
-    <string name="which_kind">Which kind of introverted \nare you?</string>
-    <string name="second_title">Get to know the different aspects of this often generalized part of yourself.</string>
-    <string name="start_quiz">Start Quiz</string>
-    <string name="results">Results</string>
-    <string name="no_results">No results to show</string>
-    <string name="must_select">Please, select one option to proceed</string>
-    <string name="about_the_test">About the test</string>
-    <string name="copyright_disclaimer">Content for this test was taken \ndirectly from this article:</string>
+    <string name="which_kind">Que tipo de introvertido \nvocê é?</string>
+    <string name="second_title">Conheça os diferentes aspectos dessa parte frequentemente generalizada de si.</string>
+    <string name="start_quiz">Começar Quiz</string>
+    <string name="results">Resultados</string>
+    <string name="no_results">Sem resultados para mostrar</string>
+    <string name="must_select">Por favor, selecione uma opção para prosseguir</string>
+    <string name="about_the_test">Sobre o quiz</string>
+    <string name="copyright_disclaimer">Conteúdo para esse quiz foi retirado diretamente do artigo abaixo:</string>
     <string name="link_to_article">
-        <a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you \n(Clickable link)</a>
+        <a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you \n(link clicável)</a>
     </string>
     <string name="content_description">media</string>
     <string name="each_type">Each Type</string>
     <string name="icon">icon</string>
 
-    <string name="social">Social Introversion</string>
-    <string name="thinking">Thinking Introversion</string>
-    <string name="anxious">Anxious Introversion</string>
-    <string name="restrained">Restrained Introversion</string>
+    <string name="social">Introvertido Social</string>
+    <string name="thinking">Introvertido Comtemplativo</string>
+    <string name="anxious">Introvertido Ansioso</string>
+    <string name="restrained">Introvertido Contido</string>
 
-    <string name="r_social">Social Introvert</string>
-    <string name="r_thinking">Thinking Introvert</string>
-    <string name="r_anxious">Anxious Introvert</string>
-    <string name="r_restrained">Restrained Introvert</string>
+    <string name="r_social">Social</string>
+    <string name="r_thinking">Pensador</string>
+    <string name="r_anxious">Ansioso</string>
+    <string name="r_restrained">Contido</string>
 
-    <string name="ranking_option_1">Very uncharacteristic or untrue, strongly disagree</string>
-    <string name="ranking_option_2">Uncharacteristic</string>
-    <string name="ranking_option_3">Neutral</string>
-    <string name="ranking_option_4">Characteristic</string>
-    <string name="ranking_option_5">Very characteristic or true, strongly agree</string>
+    <string name="ranking_option_1">Muito atípico ou falso, discordo fortemente</string>
+    <string name="ranking_option_2">Pouco característico</string>
+    <string name="ranking_option_3">Neutro</string>
+    <string name="ranking_option_4">Característico</string>
+    <string name="ranking_option_5">Muito característico ou verdadeiro, concordo fortemente</string>
 
     <string name="score">Score: %d</string>
-    <string name="level">Level: %d</string>
+    <string name="level">Nível: %d</string>
 
-    <string name="low">Low</string>
-    <string name="average">Average</string>
-    <string name="high">High</string>
+    <string name="low">Baixo</string>
+    <string name="average">Mediano</string>
+    <string name="high">Alto</string>
 
-    <string name="btn_back">Back</string>
-    <string name="btn_next">Next</string>
-    <string name="leave">Leave</string>
-    <string name="btn_stay">Stay</string>
-    <string name="btn_share">Share</string>
-    <string name="close">Close</string>
-    <string name="question_placeholder">description</string>
+    <string name="btn_back">Voltar</string>
+    <string name="btn_next">Avançar</string>
+    <string name="leave">Sair</string>
+    <string name="btn_stay">Ficar</string>
+    <string name="btn_share">Compartilhar</string>
+    <string name="close">Fechar</string>
     <string name="quiz_progress">%d/40</string>
-    <string name="warning">Are you sure that you want to stop the quiz now? Your progress will be lost.</string>
-    <string name="you_are_mostly_a">You are mostly a</string>
-    <string name="language">Language</string>
+    <string name="quiz_progress_placeholder">1/40</string>
+    <string name="warning">Tem certeza de que deseja interromper o quiz agora? Seu progresso será salvo.</string>
+<!--    <string name="you_are_mostly_a">You are mostly a</string>-->
+    <string name="language">Idioma</string>
 
-    <string name="why_a_quiz">Why is there a quiz for this?</string>
-    <string name="types_of_introversion">Types of introversion</string>
+    <string name="why_a_quiz">Porque existe um quiz para isso?</string>
+    <string name="types_of_introversion">Tipos de Introversão</string>
 
-    <string name="how_is_it_calculated">To understand the relevance of this test, you can read the following article:<a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you</a>\n\nThere you will find the reasoning behind the creation of this test and also a description of how its result is calculated.</string>
+    <string name="how_is_it_calculated">Para entender a relevância desse teste, leia o artigo a seguir:<a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you</a>\n\nNele você encontrará a motivação para a criação desse teste e também uma explicação de como o resultado é calculado.</string>
 
-    <string name="each_type_definition">These definitions come from <a href="https://www.refinery29.com/en-gb/types-of-introverts">this</a> cool article.</string>
-    <string name="the_social_introvert">Social introverts favour solitude more than most people. Or, they tend to choose small groups of people over larger gatherings when they socialise. It\'s not that they can\'t enjoy themselves in social situations, but it speaks to their preference.\n\nThe main reason for this is that instead of feeling energised by others and their external surroundings like people that are extroverted, social introverts find that these situations drain their energy.</string>
-    <string name="the_thinking_introvert">Thinking introverts are highly introspective and creative. They don\'t need to recharge by themselves, but they do thrive creatively and mentally on their own, utilising \'me time\' to self-reflect and explore ideas internally.\n\nThese people aren\'t necessarily hyper-analytical but can get lost in their imagination, potentially coming off as a bit aloof when they\'re really just processing the question or situation. Oh, and they\'re prone to zoning out, so go easy on them. They tend to get mistaken as being passive because they\'re not quick to react but they\'re likely just digesting what\'s going on, and prefer to get back to people at a later time.</string>
-    <string name="the_anxious_introvert">The anxious introvert is often reserved, and may even appear on edge or nervous because they\'re quick to get stressed, particularly when tense situations arise.\n\nThese introverts will most likely avoid people and settings that exacerbate their anxiety. It might come off as avoidant or rude, but it\'s all just their protective defence mechanism at work. It doesn\'t mean they don\'t like company, but they\'re just aware of their comfort zones and don\'t like their boundaries crossed.</string>
-    <string name="the_restrained_introvert">Less about the mental side of introversion and more on the behavioural end, restrained introverts tend to be more guarded in their approach to life. This makes them practical and grounded; think responsible and careful over aloof and imaginative.\n\nBecause of their propensity to consider every outcome, they enjoy predictable activities and can detach from their emotions with ease.</string>
-    <string name="continuation_question">It seems there\'s an unfinished test. Would you like to continue it?</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
+    <string name="each_type_definition">As definições a seguir foram retiradas <a href="https://www.refinery29.com/en-gb/types-of-introverts">desse</a> artigo.</string>
+    <string name="the_social_introvert">Introvertidos sociais favorecem seu tempo sozinho mais do que a maior parte das pessoas. Em situações sociais, tendem a optar por grupos de poucas  pessoas em oposição a grupos com muitas pessoas. Não é que eles não consigam desfrutar de situações sociais, é mais uma questão de preferência.\n\nO principal motivo para isso é que, ao invés de se sentir enérgicos quando em ambientes com outras pessoas como as pessoas que são extrovertidas, introvertidos sociais sentem sua energia ser drenada nesses tipos de situações.</string>
+    <string name="the_thinking_introvert">Pensadores são altamente introspectivos e criativos. Eles não precisam ficar sozinhos para se recarregarem, mas eles se desenvolvem criativamente e mentalmente por sí próprios, fazendo uso do \'tempo consigo mesmo\' para auto-refletir e explorar ideias internamente.\n\nEssas pessoas não são necessariamente hyper analíticas mas elas podem se perder em sua própria imaginação, possivelmente transparecendo como um tanto indiferentes quando na verdade estão simplismente processando um questionamento ou uma situação. Ah, e eles são propensos a ter devaneios, então pegue leve com eles. Pensadores tendem a ser mal interpretados como sendo passivos por conta de não serem rápidos para reagir, mas eles estão muito provavelmente apenas digerindo o que está acontecendo, e preferem agir ou dar uma resposta depois de algum tempo.</string>
+    <string name="the_anxious_introvert">O introvertido ansioso é frequentemente reservado, e pode até mesmo aparentar estar ansioso ou nervoso por conta de ficarem estressados com facilidade, em particular quando situações enervantes aparecem.\n\nPessoas com esse tipo de introversão irão provavelmente evitar pessoas e ambientes que intensifiquem sua ansiedade. Isso pode parecer ser querer se excluir ou rudez, mas é apenas o mecanismo de defesa deles em ação. Não quer dizer também que eles não gostem de companhia, eles são apenas concientes de suas zonas de conforto e não gostam de ter seus limites ultrapassados.</string>
+    <string name="the_restrained_introvert">Menos sobre o lado mental da introversão e mais sobre o comportamental, introvertidos contidos tendem a ser mais cuidadosos em sua abordagem com a vida. Isso os torna seres mais práticos e pés no chão; pensam de forma cuidadosa e responsável em oposição  a pensar de forma indiferente e imaginativa.\n\nPor causa de sua propensão a considerar todo e qualquer possibilidade, eles gostam de atividades previsíveis e podem se desvincular de suas emoções com facilidade.</string>
+    <string name="continuation_question">Perece que existe um quiz não finalizado. Gostaria de continua-lo?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
 
     <string-array name="questions">
         // Social Introversion
-        <item>I like to share special occasions with just one person or a few close friends, rather than have big celebrations.</item>
-        <item>I think it would be satisfying if I could have very close friendships with many people.</item>
-        <item>I try to structure my day so that I always have some time to myself.</item>
-        <item>I like to vacation in places where there are a lot of people around and a lot of activities going on.</item>
-        <item>After spending a few hours surrounded by a lot of people, I am usually eager to get away by myself.</item>
-        <item>I do not have a strong need to be around other people.</item>
-        <item>Just being around others and finding out about them is one of the most interesting things I can think of doing.</item>
-        <item>I usually prefer to do things alone.</item>
-        <item>Other people tend to misunderstand me—forming a mistaken impression of what kind of person I am because I don’t say much about myself.</item>
-        <item>I feel drained after social situations, even when I enjoyed myself.</item>
+        <item>Gosto de compartilhar ocasiões especiais com apenas uma pessoa ou alguns amigos próximos, em oposição a ter grandes celebrações.</item>
+        <item>Acho que seria satisfatório se eu pudesse ter uma forte ligação de amizade com muitas pessoas</item>
+        <item>Tento estruturar meu dia de forma a sempre ter algum tempo pra mim mesmo.</item>
+        <item>Gosto de viajar para lugares onde existem muitas pessoas ao redor e muitas atividades acontecendo.</item>
+        <item>Depois de gastar algumas horas rodeado por muitas pessoas, eu frequentemente fico ansioso por sair por mim mesmo.</item>
+        <item>Não tenho uma forte necessidade de estar rodeado por outras pessoas.</item>
+        <item>Estar cercado por outras pessoas e poder descobrir mais sobre elas é uma das coisas mais interessanes que eu consigo pensar em fazer.</item>
+        <item>Eu geralmente prefiro fazer as coisas sozinho.</item>
+        <item>Outras pessoas tendem a me entender mal- formando uma impressão errada de que tipo de pessoa eu ,sou porque não falo muito de mim mesmo.</item>
+        <item>Me sinto exaurido após situações sociais, mesmo naquelas na qual me diverti.</item>
 
         // Thinking Introversion
-        <item>I enjoy analyzing my own thoughts and ideas about myself.</item>
-        <item>I have a rich, complex inner life.</item>
-        <item>I frequently think about what kind of person I am.</item>
-        <item>When I am reading an interesting story or novel or when I am watching a good movie, I imagine how I would feel if the events in the story were happening to me.</item>
-        <item>I seldom think about myself.</item>
-        <item>I generally pay attention to my inner feelings.</item>
-        <item>I value my personal self-evaluation, that is, the private opinion I have of myself.</item>
-        <item>I sometimes step back (in my mind) in order to examine myself from a distance.</item>
-        <item>I daydream and fantasize, with some regularity, about things that might happen to me.</item>
-        <item>I am inclined to be introspective, that is, to analyze myself.</item>
+        <item>Eu gosto de analisar minhas próprias ideias e pensamentos sobre mim mesmo.</item>
+        <item>Tenho uma vida interior rica e complexa.</item>
+        <item>Frequentemente penso sobre que tipo de pessoa eu sou.</item>
+        <item>Quando estou lendo uma história interessante ou quando estou assistindo a um bom filme, eu imagino como eu me sentiria se os eventos na história estivessem acontecendo comigo.</item>
+        <item>Raramente penso sobre mim mesmo.</item>
+        <item>Geralmente presto atenção ao meus próprios sentimentos.</item>
+        <item>Eu valorizo minha própria auto-avaliação, ou seja, a opinião particular que tenho de mim mesmo.</item>
+        <item>Algumas vezes volto alguns passos (na minha mente) para poder me auto examinar de um ponto distante.</item>
+        <item>Eu devaneio e fantasio, com certa regularidade, sobre coisas que podem acontecer comigo.</item>
+        <item>Sou inclinado a ser introspectivo, ou seja, a analisar a mim mesmo.</item>
 
         // Anxious Introversion
-        <item>When I enter a room I often become self-conscious and feel that the eyes of others are upon me.</item>
-        <item>My thoughts are often focused on episodes of my life that I wish I’d stop thinking about.</item>
-        <item>My nervous system sometimes feels so frazzled that I just have to get off by myself.</item>
-        <item>I am confident about my social skills.</item>
-        <item>Defeat or disappointment usually shame or anger me, but I try not to show it.</item>
-        <item>It does not take me long to overcome my shyness in new situations.</item>
-        <item>I feel relaxed even in unfamiliar social situations.</item>
-        <item>Even when I am in a group of friends, I often feel very alone and uneasy.</item>
-        <item>My secret thoughts, feelings, and actions would horrify some of my friends.</item>
-        <item>I feel painfully self-conscious when I am around strangers.</item>
+        <item>Quando entro em uma salWhen I enter a room I often become self-conscious and feel that the eyes of others are upon me.</item>
+        <item>Meus pensamentos são com frequência focados em episódios da minha vida sobre os quais eu gostaria de para de pensar.</item>
+        <item>Meu sistema nervoso algumas vezes fica tão exausto que eu tenho que sair por mim mesmo.</item>
+        <item>Sou confiante a respeito das minhas habilidades sociais.</item>
+        <item>Derrota e desapontamento geralmente me deixam com raiva ou com vergonha, mas eu tento não demonstrar isso.</item>
+        <item>Não levo muito tempo para superar minha timidez em novas situações.</item>
+        <item>Me sinto confortável mesmo em situações sociais desconhecidas.</item>
+        <item>Mesmo quando estou entre amigos, com frequência me sinto sozinho e desconfortável.</item>
+        <item>Minhas ações, sentimentos e pensamentos internos aterrorizariam alguns dos meus amigos.</item>
+        <item>Me sinto dolorosamente auto-conciente quando estou perto de estranhos.</item>
 
         // Restrained Introversion
-        <item>I like to be off and running as soon as I wake up in the morning.</item>
-        <item>I’ll try anything once.</item>
-        <item>For relaxation I like to slow down and take things easy.</item>
-        <item>I like to wear myself out with exertion.</item>
-        <item>I often say the first thing that comes into my head.</item>
-        <item>I generally seek new and exciting experiences and sensations.</item>
-        <item>I like to keep busy all the time.</item>
-        <item>I often act on the spur of the moment.</item>
-        <item>I sometimes do “crazy” things just to be different.</item>
-        <item>I often feel sluggish.</item>
+        <item>Gosto de estar em ação assim que acordo pela manhã.</item>
+        <item>Vou tentar qualquer coisa pelo menos uma vez.</item>
+        <item>Para descontração gosto de diminuir o passo e levar as coisas com calma.</item>
+        <item>Gosto de me exaurir com tarefas que exigem esforço mental ou físico.</item>
+        <item>Frequentemente digo a primeira coisa que vem a minha mente.</item>
+        <item>Eu geralmente busco sensações e experiências novas e excitantes.</item>
+        <item>Gosto de me manter ocupado a todo momento.</item>
+        <item>Frequentemente ajo no impulso do momento.</item>
+        <item>Algumas vezes faço coisas "fora do comum" só para ser diferente.</item>
+        <item>Frequentemente me sinto lento.</item>
     </string-array>
 </resources>

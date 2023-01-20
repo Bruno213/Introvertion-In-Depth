@@ -24,12 +24,16 @@ interface QuizDao {
     suspend fun getQuizCount(): Int
 
     @Transaction
-    @Query("SELECT * FROM Quiz")
+    @Query("SELECT * FROM Quiz WHERE socialScore != 0")
     suspend fun getQuizzesWithAnswers(): List<QuizWithAnswers>
 
     @Transaction
     @Query("SELECT * FROM Quiz WHERE id == :quizId")
     suspend fun getQuizWithAnswers(quizId: Int): QuizWithAnswers
+
+    @Transaction
+    @Query("SELECT * FROM quiz WHERE socialScore == 0")
+    suspend fun getUnfinishedQuizWithAnswers(): QuizWithAnswers?
 
     @Query("SELECT * FROM answer WHERE id == :id")
     fun getAnswer(id: Int): Answer
@@ -43,6 +47,6 @@ interface QuizDao {
     @Query("DELETE FROM answer WHERE quizId == :quizId")
     suspend fun deleteAnswers(quizId: Int)
 
-    @Query("SELECT count(*) from answer")
-    fun getAnswersCount(): Int
+    @Query("SELECT count(*) from answer WHERE quizId == :quizId")
+    fun getAnswersCount(quizId: Int): Int
 }

@@ -19,6 +19,8 @@ android {
         versionCode = App.versionCode
         versionName = App.versionName
 
+        resourceConfigurations.addAll(mutableSetOf("pt_BR", "en"))
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -55,7 +57,7 @@ dependencies {
     implementation(Libs.constraintLayout)
     // Navigation
     implementation(Libs.navigation)
-    implementation(Libs.navigationUI)
+//    implementation(Libs.navigationUI)
 //    implementation(Libs.splashScreen)
     // Lifecycle
     implementation(Libs.lifecycle)

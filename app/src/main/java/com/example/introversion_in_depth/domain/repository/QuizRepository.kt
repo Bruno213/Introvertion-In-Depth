@@ -6,9 +6,12 @@ import com.example.introversion_in_depth.domain.datalayer.entities.entityrelatio
 import com.example.introversion_in_depth.domain.datalayer.local.dao.QuizDao
 
 class QuizRepository(private val quizDao: QuizDao) {
-
     suspend fun getQuiz(quizId: Int): Quiz {
         return quizDao.getQuiz(quizId)
+    }
+
+    suspend fun getUnfinishedQuizWithAnswers(): QuizWithAnswers? {
+        return quizDao.getUnfinishedQuizWithAnswers()
     }
 
     suspend fun insertQuiz(quiz: Quiz): Long {
@@ -23,7 +26,6 @@ class QuizRepository(private val quizDao: QuizDao) {
         quizDao.deleteQuiz(quiz)
     }
 
-
     suspend fun getQuizCount(): Int {
         return quizDao.getQuizCount()
     }
@@ -35,10 +37,6 @@ class QuizRepository(private val quizDao: QuizDao) {
     suspend fun getQuizWithAnswers(quizId: Int): QuizWithAnswers {
         return quizDao.getQuizWithAnswers(quizId)
     }
-//
-//    fun getAnswer(id: Int): Answer {
-//        return quizDao.getAnswer(id)
-//    }
 
     suspend fun insertAnswer(answer: Answer): Long {
         return quizDao.insertAnswer(answer)
@@ -52,7 +50,7 @@ class QuizRepository(private val quizDao: QuizDao) {
         quizDao.deleteAnswers(quizId)
     }
 
-//    fun getAnswerCount(): Int {
-//        return quizDao.getAnswersCount()
-//    }
+    fun getAnswerCount(quizId: Int): Int {
+        return quizDao.getAnswersCount(quizId)
+    }
 }

@@ -1,10 +1,15 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
+import android.app.Dialog
+import android.content.Context
+import android.view.LayoutInflater
 import androidx.lifecycle.viewModelScope
+import com.example.introversion_in_depth.R
+import com.example.introversion_in_depth.databinding.DialogContinueQuizBinding
 import com.example.introversion_in_depth.domain.contracts.BaseViewModel
-import com.example.introversion_in_depth.domain.interfaces.ViewStateHandler
 import com.example.introversion_in_depth.domain.datalayer.entities.Answer
 import com.example.introversion_in_depth.domain.datalayer.entities.Quiz
+import com.example.introversion_in_depth.domain.interfaces.ViewStateHandler
 import com.example.introversion_in_depth.domain.repository.QuizRepository
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.launchIn
@@ -92,50 +97,68 @@ class QuizViewModel(
                     ))
                 }
 
-                is QuizAction.InitQuiz -> {
-                    questions = action.questions
-
-                    if(!action.restore) {
-                        quizId = withContext(Dispatchers.Default) {
-                            val count = quizRepository.getQuizCount() + 1
-                            quizRepository.insertQuiz(Quiz(code = count.toString())).toInt()
-                        }
-
-                        setState(QuizState.QuestionLoaded(
-                            questions[0],
-                            null,
-                            1,
-                            true
-                        ))
-
-                    } else {
-                        quizId = withContext(Dispatchers.Default) {
-                            val count = quizRepository.getQuizCount() + 1
-                            quizRepository.insertQuiz(Quiz(code = count.toString())).toInt()
-                        }
-
-                        setState(QuizState.QuestionLoaded(
-                            questions[0],
-                            null,
-                            1,
-                            true
-                        ))
+                QuizAction.StartQuiz -> {
+                    quizId = withContext(Dispatchers.Default) {
+                        val count = quizRepository.getQuizCount() + 1
+                        quizRepository.insertQuiz(Quiz(code = count.toString())).toInt()
                     }
+
+                    setState(QuizState.QuestionLoaded(
+                        questions[0],
+                        null,
+                        1,
+                        true
+                    ))
 
                     delay(300)
                     setState(QuizState.Idle)
                 }
 
-                QuizAction.ShowContinuationPopup -> {
-                    setState(QuizState.ContinuationPopupLoaded)
+                is QuizAction.RestoreQuiz -> {
+                    quizId = action.quizAndAnswers.quiz.id
+
+                    answers.addAll(action.quizAndAnswers.answers)
+                    currentIndex = answers.size
+
+                    setState(QuizState.QuestionLoaded(
+                        questions[currentIndex],
+                        null,
+                        currentIndex+1,
+                        currentIndex == 0
+                    ))
+
+                    delay(300)
+                    setState(QuizState.Idle)
                 }
 
-                QuizAction.LeaveQuiz -> {
+                is QuizAction.ClearAndStart -> {
                     quizRepository.deleteAnswers(quizId)
                     val quiz = withContext(Dispatchers.Default)
                     { quizRepository.getQuiz(quizId) }
                     quizRepository.deleteQuiz(quiz)
 
+                    process(QuizAction.StartQuiz)
+                }
+
+                is QuizAction.InitQuiz -> {
+                    questions = action.questions
+
+                    delay(500)
+
+                    val quizAndAnswers = withContext(Dispatchers.Default)
+                    { quizRepository.getUnfinishedQuizWithAnswers() }
+
+                    if(quizAndAnswers != null) {
+                        quizId = quizAndAnswers.quiz.id
+
+                        setState(QuizState.ContinuationPopupLoaded(quizAndAnswers))
+                        return@launch
+                    }
+
+                    process(QuizAction.StartQuiz)
+                }
+
+                QuizAction.LeaveQuiz -> {
                     setState(QuizState.LeavingQuiz)
                 }
             }

@@ -44,7 +44,7 @@
             android:textColor="@color/white"
             android:text="@string/no"
             app:backgroundTint="@null"
-            android:background="@drawable/btn_style_rounded"
+            android:background="@drawable/btn_style_rounded_v3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_yes"
             app:layout_constraintBottom_toBottomOf="parent" />

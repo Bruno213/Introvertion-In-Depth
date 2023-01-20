@@ -1,6 +1,8 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
+import android.app.Dialog
 import com.example.introversion_in_depth.domain.datalayer.entities.Answer
+import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.ui.ViewState
 
 sealed class QuizState: ViewState() {
@@ -13,7 +15,9 @@ sealed class QuizState: ViewState() {
         val initialQuestion: Boolean = false
     ): QuizState()
 
-    object ContinuationPopupLoaded: QuizState()
+    data class ContinuationPopupLoaded(
+        val quizAndAnswers: QuizWithAnswers
+    ): QuizState()
 
     object Loading: QuizState()
     object Idle: QuizState()

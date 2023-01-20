@@ -6,15 +6,15 @@ import com.example.introversion_in_depth.domain.datalayer.entities.Answer
 
 object IntroversionMeter {
 
-    fun detectStrongerType(array: Array<Int>): Int {
-        val greaterValue = array.max()
-
-        for(n in array) {
-            if(greaterValue == n) return -1
-        }
-
-        return array.indexOf(greaterValue)
-    }
+//    fun detectStrongerType(array: Array<Int>): Int {
+//        val greaterValue = array.max()
+//
+//        for(n in array) {
+//            if(greaterValue == n) return -1
+//        }
+//
+//        return array.indexOf(greaterValue)
+//    }
 
     fun checkSocialLevel(resources: Resources, score: Int): String {
         return resources.getString(

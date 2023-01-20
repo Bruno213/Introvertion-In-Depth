@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Introversion-In-Depth</string>
+
+    <string name="which_kind">Which kind of introverted \nare you?</string>
+    <string name="second_title">Get to know the different aspects of this often generalized part of yourself.</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="results">Results</string>
+    <string name="no_results">No results to show</string>
+    <string name="must_select">Please, select an option to proceed</string>
+    <string name="about_the_test">About the quiz</string>
+    <string name="copyright_disclaimer">Content for this app was taken \ndirectly from the  article:</string>
+    <string name="link_to_article">
+        <a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you \n(Clickable link)</a>
+    </string>
+    <string name="content_description">media</string>
+    <string name="each_type">Each Type</string>
+    <string name="icon">icon</string>
+
+    <string name="social">Social Introversion</string>
+    <string name="thinking">Thinking Introversion</string>
+    <string name="anxious">Anxious Introversion</string>
+    <string name="restrained">Restrained Introversion</string>
+
+    <string name="r_social">Social Introvert</string>
+    <string name="r_thinking">Thinking Introvert</string>
+    <string name="r_anxious">Anxious Introvert</string>
+    <string name="r_restrained">Restrained Introvert</string>
+
+    <string name="ranking_option_1">Very uncharacteristic or untrue, strongly disagree</string>
+    <string name="ranking_option_2">Uncharacteristic</string>
+    <string name="ranking_option_3">Neutral</string>
+    <string name="ranking_option_4">Characteristic</string>
+    <string name="ranking_option_5">Very characteristic or true, strongly agree</string>
+
+    <string name="score">Score: %d</string>
+    <string name="level">Level: %d</string>
+
+    <string name="low">Low</string>
+    <string name="average">Average</string>
+    <string name="high">High</string>
+
+    <string name="btn_back">Back</string>
+    <string name="btn_next">Next</string>
+    <string name="leave">Leave</string>
+    <string name="btn_stay">Stay</string>
+    <string name="btn_share">Share</string>
+    <string name="close">Close</string>
+    <string name="quiz_progress">%d/40</string>
+    <string name="quiz_progress_placeholder">1/40</string>
+    <string name="warning">Are you sure that you want to stop the quiz now? Your progress will be saved.</string>
+<!--    <string name="you_are_mostly_a">You are mostly a</string>-->
+    <string name="language">Language</string>
+
+    <string name="why_a_quiz">Why is there a quiz for this?</string>
+    <string name="types_of_introversion">Types of introversion</string>
+
+    <string name="how_is_it_calculated">To understand the relevance of this test, read the following article:<a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you</a>\n\nThere you will find the reasoning behind the creation of this test and also a description of how its result is calculated.</string>
+
+    <string name="each_type_definition">The following definitions come from <a href="https://www.refinery29.com/en-gb/types-of-introverts">this</a> cool article.</string>
+    <string name="the_social_introvert">Social introverts favour solitude more than most people. Or, they tend to choose small groups of people over larger gatherings when they socialise. It\'s not that they can\'t enjoy themselves in social situations, but it speaks to their preference.\n\nThe main reason for this is that instead of feeling energised by others and their external surroundings like people that are extroverted, social introverts find that these situations drain their energy.</string>
+    <string name="the_thinking_introvert">Thinking introverts are highly introspective and creative. They don\'t need to recharge by themselves, but they do thrive creatively and mentally on their own, utilising \'me time\' to self-reflect and explore ideas internally.\n\nThese people aren\'t necessarily hyper-analytical but can get lost in their imagination, potentially coming off as a bit aloof when they\'re really just processing the question or situation. Oh, and they\'re prone to zoning out, so go easy on them. They tend to get mistaken as being passive because they\'re not quick to react but they\'re likely just digesting what\'s going on, and prefer to get back to people at a later time.</string>
+    <string name="the_anxious_introvert">The anxious introvert is often reserved, and may even appear on edge or nervous because they\'re quick to get stressed, particularly when tense situations arise.\n\nThese introverts will most likely avoid people and settings that exacerbate their anxiety. It might come off as avoidant or rude, but it\'s all just their protective defence mechanism at work. It doesn\'t mean they don\'t like company, but they\'re just aware of their comfort zones and don\'t like their boundaries crossed.</string>
+    <string name="the_restrained_introvert">Less about the mental side of introversion and more on the behavioural end, restrained introverts tend to be more guarded in their approach to life. This makes them practical and grounded; think responsible and careful over aloof and imaginative.\n\nBecause of their propensity to consider every outcome, they enjoy predictable activities and can detach from their emotions with ease.</string>
+    <string name="continuation_question">It seems there\'s an unfinished quiz. Would you like to continue it?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string-array name="questions">
+        // Social Introversion
+        <item>I like to share special occasions with just one person or a few close friends, rather than have big celebrations.</item>
+        <item>I think it would be satisfying if I could have very close friendships with many people.</item>
+        <item>I try to structure my day so that I always have some time to myself.</item>
+        <item>I like to vacation in places where there are a lot of people around and a lot of activities going on.</item>
+        <item>After spending a few hours surrounded by a lot of people, I am usually eager to get away by myself.</item>
+        <item>I do not have a strong need to be around other people.</item>
+        <item>Just being around others and finding out about them is one of the most interesting things I can think of doing.</item>
+        <item>I usually prefer to do things alone.</item>
+        <item>Other people tend to misunderstand me—forming a mistaken impression of what kind of person I am because I don’t say much about myself.</item>
+        <item>I feel drained after social situations, even when I enjoyed myself.</item>
+
+        // Thinking Introversion
+        <item>I enjoy analyzing my own thoughts and ideas about myself.</item>
+        <item>I have a rich, complex inner life.</item>
+        <item>I frequently think about what kind of person I am.</item>
+        <item>When I am reading an interesting story or novel or when I am watching a good movie, I imagine how I would feel if the events in the story were happening to me.</item>
+        <item>I seldom think about myself.</item>
+        <item>I generally pay attention to my inner feelings.</item>
+        <item>I value my personal self-evaluation, that is, the private opinion I have of myself.</item>
+        <item>I sometimes step back (in my mind) in order to examine myself from a distance.</item>
+        <item>I daydream and fantasize, with some regularity, about things that might happen to me.</item>
+        <item>I am inclined to be introspective, that is, to analyze myself.</item>
+
+        // Anxious Introversion
+        <item>When I enter a room I often become self-conscious and feel that the eyes of others are upon me.</item>
+        <item>My thoughts are often focused on episodes of my life that I wish I’d stop thinking about.</item>
+        <item>My nervous system sometimes feels so frazzled that I just have to get off by myself.</item>
+        <item>I am confident about my social skills.</item>
+        <item>Defeat or disappointment usually shame or anger me, but I try not to show it.</item>
+        <item>It does not take me long to overcome my shyness in new situations.</item>
+        <item>I feel relaxed even in unfamiliar social situations.</item>
+        <item>Even when I am in a group of friends, I often feel very alone and uneasy.</item>
+        <item>My secret thoughts, feelings, and actions would horrify some of my friends.</item>
+        <item>I feel painfully self-conscious when I am around strangers.</item>
+
+        // Restrained Introversion
+        <item>I like to be off and running as soon as I wake up in the morning.</item>
+        <item>I’ll try anything once.</item>
+        <item>For relaxation I like to slow down and take things easy.</item>
+        <item>I like to wear myself out with exertion.</item>
+        <item>I often say the first thing that comes into my head.</item>
+        <item>I generally seek new and exciting experiences and sensations.</item>
+        <item>I like to keep busy all the time.</item>
+        <item>I often act on the spur of the moment.</item>
+        <item>I sometimes do “crazy” things just to be different.</item>
+        <item>I often feel sluggish.</item>
+    </string-array>
+</resources>

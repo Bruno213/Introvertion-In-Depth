@@ -3,28 +3,25 @@ package com.example.introversion_in_depth.ui
 import android.animation.ValueAnimator
 import android.view.LayoutInflater
 import android.view.View
-import androidx.core.view.GravityCompat
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
-import com.example.introversion_in_depth.domain.contracts.BaseActivity
 import com.example.introversion_in_depth.databinding.ActivityMainBinding
+import com.example.introversion_in_depth.domain.contracts.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
         get() = ActivityMainBinding::inflate
 
-    private val navController  by lazy {
-        val navHostFragment = supportFragmentManager.findFragmentById(binding.fragmentContainerView.id) as NavHostFragment
-        navHostFragment.navController
-//        Navigation.findNavController(this, binding.fragmentContainerView.id)
-    }
+//    private val navController  by lazy {
+//        val navHostFragment = supportFragmentManager.findFragmentById(binding.fragmentContainerView.id) as NavHostFragment
+//        navHostFragment.navController
+//    }
 
     private val valueAnimator = ValueAnimator.ofFloat(0f, 90f, 180f, 270f, 360f)
 
     override fun setup() {
-        binding.navView.setupWithNavController(navController)
+
     }
+
+
 
     fun showLoading() {
         valueAnimator.apply {
@@ -44,18 +41,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         if(valueAnimator.isRunning) {
             valueAnimator.pause()
             valueAnimator.removeAllUpdateListeners()
-        }
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return NavigationUI.navigateUp(navController, binding.root)
-    }
-
-    override fun onBackPressed() {
-        if (binding.root.isDrawerOpen(GravityCompat.START)) {
-            binding.root.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
         }
     }
 }

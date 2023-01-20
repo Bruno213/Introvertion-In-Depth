@@ -1,5 +1,6 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
+import android.animation.ValueAnimator
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
@@ -8,20 +9,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatRadioButton
+import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.introversion_in_depth.R
 import com.example.introversion_in_depth.databinding.DialogContinueQuizBinding
-import com.example.introversion_in_depth.domain.contracts.BaseFragment
 import com.example.introversion_in_depth.databinding.DialogLeaveBinding
 import com.example.introversion_in_depth.databinding.FragmentQuizBinding
 import com.example.introversion_in_depth.di.CustomApplication
+import com.example.introversion_in_depth.domain.contracts.BaseFragment
+import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.viewModelsFactory
-import com.google.android.material.snackbar.Snackbar
 
 class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
 
@@ -61,8 +63,8 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                 (activity as MainActivity).hideLoading()
             }
 
-            QuizState.ContinuationPopupLoaded -> {
-                loadContinuationDialog()
+            is QuizState.ContinuationPopupLoaded -> {
+                loadContinuationDialog(viewState.quizAndAnswers)
             }
 
             is QuizState.QuestionLoaded -> {
@@ -84,6 +86,9 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
     override fun setup() {
         setListeners()
         setBackButtonBehavior()
+
+        val questionsArray = resources.getStringArray(R.array.questions).asList()
+        viewModel.process(QuizAction.InitQuiz(requireContext(), questionsArray))
     }
 
     private fun setListeners() {
@@ -115,6 +120,7 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
         val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val bind = DialogLeaveBinding.inflate(inflater)
         dialogLeave.setContentView(bind.root)
+        dialogLeave.setCancelable(false)
         bind.btnLeave.setOnClickListener {
             viewModel.process(QuizAction.LeaveQuiz)
             dialogLeave.dismiss()
@@ -126,22 +132,21 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
         dialogLeave.show()
     }
 
-    private fun loadContinuationDialog() {
+    private fun loadContinuationDialog(quizAndAnswers: QuizWithAnswers) {
         val dialogContinue = Dialog(requireContext(), R.style.NewDialog)
-        val inflater = requireActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val inflater = requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val bind = DialogContinueQuizBinding.inflate(inflater)
         dialogContinue.setContentView(bind.root)
-        val questionsArray = resources.getStringArray(R.array.questions).asList()
-
+        dialogContinue.setCancelable(false)
         bind.btnNo.setOnClickListener {
             dialogContinue.dismiss()
-            viewModel.process(QuizAction.InitQuiz(questionsArray))
-        }
-        bind.btnYes.setOnClickListener {
-            dialogContinue.dismiss()
-            viewModel.process(QuizAction.InitQuiz(questionsArray))
+            viewModel.process(QuizAction.ClearAndStart)
         }
 
+        bind.btnYes.setOnClickListener {
+            dialogContinue.dismiss()
+            viewModel.process(QuizAction.RestoreQuiz(quizAndAnswers))
+        }
         dialogContinue.show()
     }
 
@@ -161,9 +166,13 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
                         )
                     )
                 } else {
-                    Snackbar.make((activity as MainActivity).findViewById(android.R.id.content),
-                        R.string.must_select, Snackbar.LENGTH_SHORT)
-                        .show()
+                    ValueAnimator.ofFloat(0f, 15f, -15f, 0f).apply {
+                        duration = 400
+                        start()
+                    }.addUpdateListener {
+                        val animatedValue = it.animatedValue as Float
+                        binding.radioGroup.translationY = animatedValue
+                    }
                 }
             }
 

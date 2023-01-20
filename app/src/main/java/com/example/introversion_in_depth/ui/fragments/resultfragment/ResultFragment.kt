@@ -34,23 +34,23 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
     override fun handleState(viewState: ViewState) {
         when(viewState) {
             is ResultState.ResultReckoned -> {
-                IntroversionMeter.detectStrongerType(arrayOf(
-                    viewState.data.socialScore,
-                    viewState.data.thinkingScore,
-                    viewState.data.anxiousScore,
-                    viewState.data.restrainedScore)).let { strongerType ->
-
-                    when(strongerType) {
-                        0 -> binding.result.text = resources.getString(R.string.r_social)
-                        1 -> binding.result.text = resources.getString(R.string.thinking)
-                        2 -> binding.result.text = resources.getString(R.string.anxious)
-                        3 -> binding.result.text = resources.getString(R.string.restrained)
-                        else -> {
-                            binding.mostly.visibility = View.GONE
-                            binding.result.visibility = View.GONE
-                        }
-                    }
-                }
+//                IntroversionMeter.detectStrongerType(arrayOf(
+//                    viewState.data.socialScore,
+//                    viewState.data.thinkingScore,
+//                    viewState.data.anxiousScore,
+//                    viewState.data.restrainedScore)).let { strongerType ->
+//
+//                    when(strongerType) {
+//                        0 -> binding.result.text = resources.getString(R.string.r_social)
+//                        1 -> binding.result.text = resources.getString(R.string.thinking)
+//                        2 -> binding.result.text = resources.getString(R.string.anxious)
+//                        3 -> binding.result.text = resources.getString(R.string.restrained)
+//                        else -> {
+//                            binding.mostly.visibility = View.GONE
+//                            binding.result.visibility = View.GONE
+//                        }
+//                    }
+//                }
 
                 binding.socialScore.text  = resources.getString(R.string.score, viewState.data.socialScore)
                 binding.socialLevel.text = IntroversionMeter.checkSocialLevel(resources, viewState.data.socialScore)

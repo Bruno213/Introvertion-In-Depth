@@ -10,7 +10,6 @@ data class Quiz(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val code: String = "",
-    val quizStatus: String = "Dropped",
     @Embedded
     val result: QuizResult = QuizResult()
 )
