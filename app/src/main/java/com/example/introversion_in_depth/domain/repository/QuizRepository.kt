@@ -30,6 +30,10 @@ class QuizRepository(private val quizDao: QuizDao) {
         return quizDao.getQuizCount()
     }
 
+    suspend fun getValidQuizCount(): Int {
+        return quizDao.getValidQuizCount()
+    }
+
     suspend fun getQuizzesWithAnswers(): List<QuizWithAnswers> {
         return quizDao.getQuizzesWithAnswers()
     }

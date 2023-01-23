@@ -23,6 +23,9 @@ interface QuizDao {
     @Query("SELECT count(*) FROM quiz")
     suspend fun getQuizCount(): Int
 
+    @Query("SELECT count(*) FROM quiz WHERE socialScore != 0")
+    suspend fun getValidQuizCount(): Int
+
     @Transaction
     @Query("SELECT * FROM Quiz WHERE socialScore != 0")
     suspend fun getQuizzesWithAnswers(): List<QuizWithAnswers>

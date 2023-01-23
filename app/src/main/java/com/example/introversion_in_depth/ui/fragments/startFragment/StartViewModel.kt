@@ -35,7 +35,7 @@ class StartViewModel(
         CoroutineScope(Dispatchers.Default).launch {
             when (action) {
                 StartAction.SetToIdle -> {
-                    delay(200)
+                    delay(300)
                     setState(StartState.Idle)
                 }
 
@@ -55,7 +55,7 @@ class StartViewModel(
 
                 StartAction.LoadResults -> {
                     val quizCount = withContext(Dispatchers.Default)
-                    { quizRepository.getQuizCount() }
+                    { quizRepository.getValidQuizCount() }
 
                     if(quizCount == 0) {
                         setState(StartState.NoResults)

@@ -67,6 +67,7 @@ dependencies {
     //Room
     implementation(Libs.roomRunTime)
     implementation(Libs.roomKtx)
+    implementation(Libs.customTab)
     kapt(Libs.roomCompiler)
 
     testImplementation(TestLibs.jUnit)

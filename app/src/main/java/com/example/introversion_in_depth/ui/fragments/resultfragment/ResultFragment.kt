@@ -11,6 +11,7 @@ import com.example.introversion_in_depth.di.CustomApplication
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.IntroversionMeter
+import com.example.introversion_in_depth.util.LanguageConfig
 import com.example.introversion_in_depth.util.shareImageUri
 import com.example.introversion_in_depth.util.viewModelsFactory
 
@@ -27,6 +28,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
         setListeners()
         arguments?.let {
             val quizId = it.getInt("quizId")
+            setTexts()
             viewModel.process(ResultAction.ReckonResult(quizId))
         }
     }
@@ -34,35 +36,17 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
     override fun handleState(viewState: ViewState) {
         when(viewState) {
             is ResultState.ResultReckoned -> {
-//                IntroversionMeter.detectStrongerType(arrayOf(
-//                    viewState.data.socialScore,
-//                    viewState.data.thinkingScore,
-//                    viewState.data.anxiousScore,
-//                    viewState.data.restrainedScore)).let { strongerType ->
-//
-//                    when(strongerType) {
-//                        0 -> binding.result.text = resources.getString(R.string.r_social)
-//                        1 -> binding.result.text = resources.getString(R.string.thinking)
-//                        2 -> binding.result.text = resources.getString(R.string.anxious)
-//                        3 -> binding.result.text = resources.getString(R.string.restrained)
-//                        else -> {
-//                            binding.mostly.visibility = View.GONE
-//                            binding.result.visibility = View.GONE
-//                        }
-//                    }
-//                }
+                binding.socialScore.text  = LanguageConfig.getString(R.string.score, viewState.data.socialScore)
+                binding.socialLevel.text = IntroversionMeter.checkSocialLevel(viewState.data.socialScore)
 
-                binding.socialScore.text  = resources.getString(R.string.score, viewState.data.socialScore)
-                binding.socialLevel.text = IntroversionMeter.checkSocialLevel(resources, viewState.data.socialScore)
+                binding.thinkingScore.text  = LanguageConfig.getString(R.string.score, viewState.data.thinkingScore)
+                binding.thinkingLevel.text = IntroversionMeter.checkThinkingLevel(viewState.data.thinkingScore)
 
-                binding.thinkingScore.text  = resources.getString(R.string.score, viewState.data.thinkingScore)
-                binding.thinkingLevel.text = IntroversionMeter.checkThinkingLevel(resources, viewState.data.thinkingScore)
+                binding.anxiousScore.text  = LanguageConfig.getString(R.string.score, viewState.data.anxiousScore)
+                binding.anxiousLevel.text = IntroversionMeter.checkAnxiousLevel(viewState.data.anxiousScore)
 
-                binding.anxiousScore.text  = resources.getString(R.string.score, viewState.data.anxiousScore)
-                binding.anxiousLevel.text = IntroversionMeter.checkAnxiousLevel(resources, viewState.data.anxiousScore)
-
-                binding.restrainedScore.text  = resources.getString(R.string.score, viewState.data.restrainedScore)
-                binding.restrainedLevel.text = IntroversionMeter.checkRestrainedLevel(resources, viewState.data.restrainedScore)
+                binding.restrainedScore.text  = LanguageConfig.getString(R.string.score, viewState.data.restrainedScore)
+                binding.restrainedLevel.text = IntroversionMeter.checkRestrainedLevel(viewState.data.restrainedScore)
 
                 viewModel.process(ResultAction.SetToIdle)
             }
@@ -81,6 +65,15 @@ class ResultFragment : BaseFragment<FragmentResultBinding>(), View.OnClickListen
                 (activity as MainActivity).hideLoading()
             }
         }
+    }
+
+    private fun setTexts() {
+        binding.btnShare.text = LanguageConfig.getString(R.string.btn_share)
+
+        binding.txtSocial.text = LanguageConfig.getString(R.string.social)
+        binding.txtAnxious.text = LanguageConfig.getString(R.string.anxious)
+        binding.txtThinking.text = LanguageConfig.getString(R.string.thinking)
+        binding.txtRestrained.text = LanguageConfig.getString(R.string.restrained)
     }
 
     private fun setListeners() {

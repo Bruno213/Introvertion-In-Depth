@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:elevation="18dp"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="18dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,11 +19,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         >
 
-
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_share"
+            app:layout_constraintBottom_toTopOf="@id/guideline_b"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,21 +37,22 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/txt_about_the_test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="40dp"
                     android:paddingTop="20dp"
-                    android:text="@string/about_the_test"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    tools:text="@string/about_the_test"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
                 <TextView
+                    android:id="@+id/txt_why_a_quiz"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="30dp"
@@ -60,25 +60,51 @@
                     android:background="@drawable/bg_outer_space"
                     android:paddingHorizontal="30dp"
                     android:paddingVertical="6dp"
-                    android:text="@string/why_a_quiz"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    tools:text="@string/why_a_quiz"
+                    />
 
                 <TextView
-                    android:id="@+id/why_this_quiz_article"
+                    android:id="@+id/reasoning_part1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="30dp"
                     android:minHeight="40dp"
                     android:paddingTop="10dp"
-                    android:text="@string/how_is_it_calculated"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
-
+                    android:textSize="13sp"
+                    tools:text="@string/how_is_it_calculated"
+                    />
+                <TextView
+                    android:id="@+id/link_to_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:minHeight="40dp"
+                    android:paddingTop="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/turquoise_blue"
+                    android:textSize="13sp"
+                    android:text="@string/link"
+                    />
+                <TextView
+                    android:id="@+id/reasoning_part2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:minHeight="40dp"
+                    android:paddingTop="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    tools:text="@string/how_is_it_calculated2"
+                    />
 
                 <TextView
+                    android:id="@+id/txt_types_of_introversion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="30dp"
@@ -86,32 +112,52 @@
                     android:background="@drawable/bg_outer_space"
                     android:paddingHorizontal="30dp"
                     android:paddingVertical="6dp"
-                    android:text="@string/types_of_introversion"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    tools:text="@string/types_of_introversion"
+                    />
+
+                <TextView
+                    android:id="@+id/each_type_definition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:linksClickable="true"
+                    android:focusable="true"
+                    android:paddingTop="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    tools:text="@string/each_type_definition"
+                    />
 
                 <TextView
                     android:id="@+id/link_to_types_article"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="30dp"
+                    android:linksClickable="true"
+                    android:focusable="true"
                     android:paddingTop="10dp"
-                    android:text="@string/each_type_definition"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textColor="@color/turquoise_blue"
+                    android:textSize="13sp"
+                    android:text="@string/link2"
+                    />
 
                 <TextView
+                    android:id="@+id/txt_social"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="25dp"
                     android:layout_marginBottom="15dp"
-                    android:text="@string/social"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:text="@string/social"
+                    />
 
                 <TextView
                     android:id="@+id/the_social_introvert"
@@ -120,21 +166,23 @@
                     android:layout_marginHorizontal="30dp"
                     android:minHeight="40dp"
                     android:paddingTop="10dp"
-                    android:text="@string/the_social_introvert"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    tools:text="@string/the_social_introvert"/>
 
                 <TextView
+                    android:id="@+id/txt_thinking"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="15dp"
-                    android:text="@string/thinking"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:text="@string/thinking"
+                    />
 
                 <TextView
                     android:id="@+id/the_thinking_introvert"
@@ -143,21 +191,24 @@
                     android:layout_marginHorizontal="30dp"
                     android:minHeight="40dp"
                     android:paddingTop="10dp"
-                    android:text="@string/the_thinking_introvert"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    tools:text="@string/the_thinking_introvert"
+                    />
 
                 <TextView
+                    android:id="@+id/txt_anxious"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="15dp"
-                    android:text="@string/anxious"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:text="@string/anxious"
+                    />
 
                 <TextView
                     android:id="@+id/the_anxious_introvert"
@@ -166,21 +217,24 @@
                     android:layout_marginHorizontal="30dp"
                     android:minHeight="40dp"
                     android:paddingTop="10dp"
-                    android:text="@string/the_anxious_introvert"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    tools:text="@string/the_anxious_introvert"
+                    />
 
                 <TextView
+                    android:id="@+id/txt_restrained"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="15dp"
-                    android:text="@string/restrained"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:text="@string/restrained"
+                    />
 
                 <TextView
                     android:id="@+id/the_restrained_introvert"
@@ -189,16 +243,16 @@
                     android:layout_marginHorizontal="30dp"
                     android:minHeight="40dp"
                     android:paddingTop="10dp"
-                    android:text="@string/the_restrained_introvert"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
-
+                    android:textSize="13sp"
+                    tools:text="@string/the_restrained_introvert"
+                    />
             </LinearLayout>
         </ScrollView>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/btn_share"
+            android:id="@+id/guideline_b"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -217,7 +271,7 @@
             android:textSize="16sp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:text="@string/close"
+            tools:text="@string/close"
             app:layout_constraintHorizontal_bias="0.932"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

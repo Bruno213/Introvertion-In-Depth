@@ -33,6 +33,8 @@ object Versions {
     const val roomKtx  = "2.4.3"
     const val roomCompiler = "2.4.3"
 
+    const val customTab = "1.4.0"
+
     const val jUnit = "4.13.2"
     const val testJUnit = "1.1.3"
     const val espresso = "3.4.0"
@@ -63,6 +65,9 @@ object Libs {
     const val roomRunTime = "androidx.room:room-runtime:${Versions.roomRunTime}"
     const val roomKtx  = "androidx.room:room-ktx:${Versions.roomKtx}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.roomCompiler}"
+
+    //CustomTabs
+    const val customTab = "androidx.browser:browser:${Versions.customTab}"
 }
 
 object TestLibs {

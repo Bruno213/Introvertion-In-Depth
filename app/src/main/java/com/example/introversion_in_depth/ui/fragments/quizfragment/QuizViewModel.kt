@@ -159,6 +159,7 @@ class QuizViewModel(
                 }
 
                 QuizAction.LeaveQuiz -> {
+                    delay(200)
                     setState(QuizState.LeavingQuiz)
                 }
             }

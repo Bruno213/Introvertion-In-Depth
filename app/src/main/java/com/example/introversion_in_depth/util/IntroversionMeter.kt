@@ -1,59 +1,55 @@
 package com.example.introversion_in_depth.util
 
-import android.content.res.Resources
 import com.example.introversion_in_depth.R
 import com.example.introversion_in_depth.domain.datalayer.entities.Answer
 
 object IntroversionMeter {
-
-//    fun detectStrongerType(array: Array<Int>): Int {
-//        val greaterValue = array.max()
-//
-//        for(n in array) {
-//            if(greaterValue == n) return -1
-//        }
-//
-//        return array.indexOf(greaterValue)
-//    }
-
-    fun checkSocialLevel(resources: Resources, score: Int): String {
-        return resources.getString(
-            when {
-                score < 24 -> R.string.low
-                score <= 36 -> R.string.average
-                else -> R.string.high
-            }
-        )
+    fun checkSocialLevel(score: Int): String {
+        return LanguageConfig.getString(
+            R.string.level,
+            LanguageConfig.getString(
+                when {
+                    score < 24 -> R.string.low
+                    score <= 36 -> R.string.average
+                    else -> R.string.high
+                }
+            ))
     }
 
-    fun checkThinkingLevel(resources: Resources, score: Int): String {
-        return resources.getString(
-            when {
-                score < 28 -> R.string.low
-                score <= 40 -> R.string.average
-                else -> R.string.high
-            }
-        )
+    fun checkThinkingLevel(score: Int): String {
+        return LanguageConfig.getString(
+            R.string.level,
+            LanguageConfig.getString(
+                when {
+                    score < 28 -> R.string.low
+                    score <= 40 -> R.string.average
+                    else -> R.string.high
+                }
+            ))
     }
 
-    fun checkAnxiousLevel(resources: Resources, score: Int): String {
-        return resources.getString(
-            when {
-                score < 23 -> R.string.low
-                score <= 37 -> R.string.average
-                else -> R.string.high
-            }
-        )
+    fun checkAnxiousLevel(score: Int): String {
+        return LanguageConfig.getString(
+            R.string.level,
+            LanguageConfig.getString(
+                when {
+                    score < 23 -> R.string.low
+                    score <= 37 -> R.string.average
+                    else -> R.string.high
+                }
+            ))
     }
 
-    fun checkRestrainedLevel(resources: Resources, score: Int): String {
-        return resources.getString(
-            when {
-                score < 25 -> R.string.low
-                score <= 37 -> R.string.average
-                else -> R.string.high
-            }
-        )
+    fun checkRestrainedLevel(score: Int): String {
+        return LanguageConfig.getString(
+            R.string.level,
+            LanguageConfig.getString(
+                when {
+                    score < 25 -> R.string.low
+                    score <= 37 -> R.string.average
+                    else -> R.string.high
+                }
+            ))
     }
 
     fun computeSocialScore(answers: List<Answer>): Int {

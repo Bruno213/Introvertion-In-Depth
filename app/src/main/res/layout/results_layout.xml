@@ -32,8 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="30dp"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/title"
@@ -45,7 +44,6 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:text="@string/results"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -87,12 +85,12 @@
                     app:layout_constraintBottom_toBottomOf="parent">
 
                     <TextView
+                        android:id="@+id/txt_social"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:text="@string/social" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/social_score"
@@ -100,8 +98,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="#98DFFB"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/score" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/social_level"
@@ -109,17 +106,16 @@
                         android:layout_height="wrap_content"
                         android:textColor="#98DFFB"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/level" />
+                        android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/txt_thinking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:text="@string/thinking" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/thinking_score"
@@ -127,8 +123,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="#FBC698"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/score" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/thinking_level"
@@ -136,17 +131,16 @@
                         android:layout_height="wrap_content"
                         android:textColor="#FBC098"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/level" />
+                        android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/txt_anxious"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:text="@string/anxious" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/anxious_score"
@@ -154,25 +148,23 @@
                         android:layout_height="wrap_content"
                         android:textColor="#FBEE98"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/score" />
+                        android:textSize="14sp" />
                     <TextView
                         android:id="@+id/anxious_level"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="#FBEE98"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/level" />
+                        android:textSize="14sp" />
 
                     <TextView
+                        android:id="@+id/txt_restrained"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:textSize="16sp"
-                        android:text="@string/restrained" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/restrained_score"
@@ -180,8 +172,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="#98FBD3"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/score" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/restrained_level"
@@ -189,8 +180,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="#98FBD3"
                         android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:text="@string/level" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
@@ -204,7 +194,6 @@
             android:textStyle="bold"
             android:textSize="15sp"
             android:textColor="@color/white"
-            android:text="@string/btn_share"
             app:backgroundTint="@null"
             android:background="@drawable/btn_style_rounded_v3"
             app:layout_constraintVertical_bias="0.93"
@@ -222,7 +211,6 @@
             android:textSize="16sp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:text="@string/close"
             app:layout_constraintHorizontal_bias="0.932"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

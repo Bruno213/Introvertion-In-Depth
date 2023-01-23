@@ -10,9 +10,7 @@
     <string name="must_select">Por favor, selecione uma opção para prosseguir</string>
     <string name="about_the_test">Sobre o quiz</string>
     <string name="copyright_disclaimer">Conteúdo para esse quiz foi retirado diretamente do artigo abaixo:</string>
-    <string name="link_to_article">
-        <a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you \n(link clicável)</a>
-    </string>
+    <string name="link_to_article">What kind of introvert are you \n(link clicável)</string>
     <string name="content_description">media</string>
     <string name="each_type">Each Type</string>
     <string name="icon">icon</string>
@@ -23,7 +21,7 @@
     <string name="restrained">Introvertido Contido</string>
 
     <string name="r_social">Social</string>
-    <string name="r_thinking">Pensador</string>
+    <string name="r_thinking">Contemplativo</string>
     <string name="r_anxious">Ansioso</string>
     <string name="r_restrained">Contido</string>
 
@@ -34,10 +32,10 @@
     <string name="ranking_option_5">Muito característico ou verdadeiro, concordo fortemente</string>
 
     <string name="score">Score: %d</string>
-    <string name="level">Nível: %d</string>
+    <string name="level">Nível: %s</string>
 
     <string name="low">Baixo</string>
-    <string name="average">Mediano</string>
+    <string name="average">Médio</string>
     <string name="high">Alto</string>
 
     <string name="btn_back">Voltar</string>
@@ -49,22 +47,29 @@
     <string name="quiz_progress">%d/40</string>
     <string name="quiz_progress_placeholder">1/40</string>
     <string name="warning">Tem certeza de que deseja interromper o quiz agora? Seu progresso será salvo.</string>
-<!--    <string name="you_are_mostly_a">You are mostly a</string>-->
+    <!--    <string name="you_are_mostly_a">You are mostly a</string>-->
     <string name="language">Idioma</string>
 
     <string name="why_a_quiz">Porque existe um quiz para isso?</string>
     <string name="types_of_introversion">Tipos de Introversão</string>
 
-    <string name="how_is_it_calculated">Para entender a relevância desse teste, leia o artigo a seguir:<a href="https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#">What kind of introvert are you</a>\n\nNele você encontrará a motivação para a criação desse teste e também uma explicação de como o resultado é calculado.</string>
+    <string name="how_is_it_calculated">Para entender a relevância desse teste, leia o artigo a seguir:</string>
+    <string name="link">https://blogs.scientificamerican.com/beautiful-minds/what-kind-of-introvert-are-you/#</string>
 
-    <string name="each_type_definition">As definições a seguir foram retiradas <a href="https://www.refinery29.com/en-gb/types-of-introverts">desse</a> artigo.</string>
+    <string name="how_is_it_calculated2">\nNele você encontrará a motivação para a criação desse teste e também uma explicação de como o resultado é calculado.\n</string>
+
+    <string name="each_type_definition">As definições a seguir foram retiradas do seguinte artigo:</string>
+    <string name="link2">https://www.refinery29.com/en-gb/types-of-introverts</string>
+
     <string name="the_social_introvert">Introvertidos sociais favorecem seu tempo sozinho mais do que a maior parte das pessoas. Em situações sociais, tendem a optar por grupos de poucas  pessoas em oposição a grupos com muitas pessoas. Não é que eles não consigam desfrutar de situações sociais, é mais uma questão de preferência.\n\nO principal motivo para isso é que, ao invés de se sentir enérgicos quando em ambientes com outras pessoas como as pessoas que são extrovertidas, introvertidos sociais sentem sua energia ser drenada nesses tipos de situações.</string>
-    <string name="the_thinking_introvert">Pensadores são altamente introspectivos e criativos. Eles não precisam ficar sozinhos para se recarregarem, mas eles se desenvolvem criativamente e mentalmente por sí próprios, fazendo uso do \'tempo consigo mesmo\' para auto-refletir e explorar ideias internamente.\n\nEssas pessoas não são necessariamente hyper analíticas mas elas podem se perder em sua própria imaginação, possivelmente transparecendo como um tanto indiferentes quando na verdade estão simplismente processando um questionamento ou uma situação. Ah, e eles são propensos a ter devaneios, então pegue leve com eles. Pensadores tendem a ser mal interpretados como sendo passivos por conta de não serem rápidos para reagir, mas eles estão muito provavelmente apenas digerindo o que está acontecendo, e preferem agir ou dar uma resposta depois de algum tempo.</string>
+    <string name="the_thinking_introvert">Comtempladores, ou pensadores, são altamente introspectivos e criativos. Eles não precisam ficar sozinhos para se recarregarem, mas eles se desenvolvem criativamente e mentalmente por sí próprios, fazendo uso do \'tempo consigo mesmo\' para auto-refletir e explorar ideias internamente.\n\nEssas pessoas não são necessariamente hyper analíticas mas elas podem se perder em sua própria imaginação, possivelmente transparecendo como um tanto indiferentes quando na verdade estão simplismente processando um questionamento ou uma situação. Ah, e eles são propensos a ter devaneios, então pegue leve com eles. Pensadores tendem a ser mal interpretados como sendo passivos por conta de não serem rápidos para reagir, mas eles estão muito provavelmente apenas digerindo o que está acontecendo, e preferem agir ou dar uma resposta depois de algum tempo.</string>
     <string name="the_anxious_introvert">O introvertido ansioso é frequentemente reservado, e pode até mesmo aparentar estar ansioso ou nervoso por conta de ficarem estressados com facilidade, em particular quando situações enervantes aparecem.\n\nPessoas com esse tipo de introversão irão provavelmente evitar pessoas e ambientes que intensifiquem sua ansiedade. Isso pode parecer ser querer se excluir ou rudez, mas é apenas o mecanismo de defesa deles em ação. Não quer dizer também que eles não gostem de companhia, eles são apenas concientes de suas zonas de conforto e não gostam de ter seus limites ultrapassados.</string>
-    <string name="the_restrained_introvert">Menos sobre o lado mental da introversão e mais sobre o comportamental, introvertidos contidos tendem a ser mais cuidadosos em sua abordagem com a vida. Isso os torna seres mais práticos e pés no chão; pensam de forma cuidadosa e responsável em oposição  a pensar de forma indiferente e imaginativa.\n\nPor causa de sua propensão a considerar todo e qualquer possibilidade, eles gostam de atividades previsíveis e podem se desvincular de suas emoções com facilidade.</string>
+    <string name="the_restrained_introvert">Menos sobre o lado mental da introversão e mais sobre o comportamental, introvertidos contidos tendem a ser mais cuidadosos em sua abordagem com a vida. Isso os torna seres mais práticos e pés no chão; pensam de forma cuidadosa e responsável em oposição  a pensar de forma indiferente e imaginativa.\n\nPor causa de sua propensão a considerar toda e qualquer possibilidade, eles gostam de atividades previsíveis e podem se desvincular de suas emoções com facilidade.</string>
     <string name="continuation_question">Perece que existe um quiz não finalizado. Gostaria de continua-lo?</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
+    <string name="portuguese">Português</string>
+    <string name="english">Inglês</string>
 
     <string-array name="questions">
         // Social Introversion

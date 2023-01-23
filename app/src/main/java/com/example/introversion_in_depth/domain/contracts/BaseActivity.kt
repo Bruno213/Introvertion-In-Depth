@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewbinding.ViewBinding
+import com.example.introversion_in_depth.util.LanguageConfig
 
 abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
     private var _binding: VB? = null
@@ -24,15 +25,9 @@ abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
 
     abstract fun setup()
 
-    fun toggleDrawer() {
-        if((binding.root as DrawerLayout).isDrawerOpen(GravityCompat.START))
-            (binding.root as DrawerLayout).closeDrawer(GravityCompat.START)
-        else
-            (binding.root as DrawerLayout).openDrawer(GravityCompat.START)
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        LanguageConfig.clearResources()
     }
 }

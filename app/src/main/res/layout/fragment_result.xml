@@ -51,30 +51,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_gravity="center"
             android:orientation="vertical">
 
-<!--            <TextView-->
-<!--                android:id="@+id/mostly"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="18sp"-->
-<!--                android:text="@string/you_are_mostly_a"/>-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/result"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginVertical="28dp"-->
-<!--                android:textColor="@color/crystal_blue"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="23sp"-->
-<!--                android:text="@string/r_social"-->
-<!--                />-->
-
             <TextView
+                android:id="@+id/txt_social"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
@@ -104,6 +84,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_thinking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -134,6 +115,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_anxious"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -164,6 +146,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_restrained"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"

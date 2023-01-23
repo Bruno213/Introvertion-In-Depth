@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatRadioButton
-import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.core.view.isVisible
 import androidx.navigation.NavOptions
@@ -23,16 +22,25 @@ import com.example.introversion_in_depth.domain.contracts.BaseFragment
 import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
+import com.example.introversion_in_depth.util.LanguageConfig
 import com.example.introversion_in_depth.util.viewModelsFactory
 
 class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
-
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentQuizBinding
         get() = FragmentQuizBinding::inflate
 
     private val viewModel by viewModelsFactory {
         val appContext = (activity?.applicationContext as CustomApplication)
         QuizViewModel(this, appContext.appContainer.quizRepository)
+    }
+
+    override fun setup() {
+        setListeners()
+        setBackButtonBehavior()
+        setTexts()
+
+        val questionsArray = LanguageConfig.getStringArray(R.array.questions).asList()
+        viewModel.process(QuizAction.InitQuiz(requireContext(), questionsArray))
     }
 
     override fun handleState(viewState: ViewState) {
@@ -51,7 +59,6 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
             }
 
             QuizState.LeavingQuiz -> {
-                (activity as MainActivity).showLoading()
                 findNavController().popBackStack()
             }
 
@@ -77,31 +84,28 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
 
                 updateType(viewState.questionCount)
 
-                binding.progress.text = resources.getString(R.string.quiz_progress, viewState.questionCount)
+                binding.progress.text = LanguageConfig.getString(R.string.quiz_progress, viewState.questionCount)
                 binding.btnBack.isVisible = !viewState.initialQuestion
             }
         }
     }
 
-    override fun setup() {
-        setListeners()
-        setBackButtonBehavior()
-
-        val questionsArray = resources.getStringArray(R.array.questions).asList()
-        viewModel.process(QuizAction.InitQuiz(requireContext(), questionsArray))
-    }
-
-    private fun setListeners() {
-        binding.btnNext.setOnClickListener(this)
-        binding.btnBack.setOnClickListener(this)
+    private fun setTexts() {
+        binding.btnNext.text = LanguageConfig.getString(R.string.btn_next)
+        binding.btnBack.text = LanguageConfig.getString(R.string.btn_back)
+        binding.rb1.text = LanguageConfig.getString(R.string.ranking_option_1)
+        binding.rb2.text = LanguageConfig.getString(R.string.ranking_option_2)
+        binding.rb3.text = LanguageConfig.getString(R.string.ranking_option_3)
+        binding.rb4.text = LanguageConfig.getString(R.string.ranking_option_4)
+        binding.rb5.text = LanguageConfig.getString(R.string.ranking_option_5)
     }
 
     private fun updateType(count: Int) {
         when {
-            count <= 10 -> binding.introversionType.text = resources.getString(R.string.social)
-            count <= 20 -> binding.introversionType.text = resources.getString(R.string.thinking)
-            count <= 30 -> binding.introversionType.text = resources.getString(R.string.anxious)
-            count <= 40 -> binding.introversionType.text = resources.getString(R.string.restrained)
+            count <= 10 -> binding.introversionType.text = LanguageConfig.getString(R.string.social)
+            count <= 20 -> binding.introversionType.text = LanguageConfig.getString(R.string.thinking)
+            count <= 30 -> binding.introversionType.text = LanguageConfig.getString(R.string.anxious)
+            count <= 40 -> binding.introversionType.text = LanguageConfig.getString(R.string.restrained)
         }
     }
 
@@ -121,7 +125,13 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
         val bind = DialogLeaveBinding.inflate(inflater)
         dialogLeave.setContentView(bind.root)
         dialogLeave.setCancelable(false)
+
+        bind.warning.text = LanguageConfig.getString(R.string.warning)
+        bind.btnLeave.text = LanguageConfig.getString(R.string.leave)
+        bind.btnStay.text = LanguageConfig.getString(R.string.btn_stay)
+
         bind.btnLeave.setOnClickListener {
+            (activity as MainActivity).showLoading()
             viewModel.process(QuizAction.LeaveQuiz)
             dialogLeave.dismiss()
         }
@@ -138,6 +148,11 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
         val bind = DialogContinueQuizBinding.inflate(inflater)
         dialogContinue.setContentView(bind.root)
         dialogContinue.setCancelable(false)
+
+        bind.warning.text = LanguageConfig.getString(R.string.continuation_question)
+        bind.btnYes.text = LanguageConfig.getString(R.string.yes)
+        bind.btnNo.text = LanguageConfig.getString(R.string.no)
+
         bind.btnNo.setOnClickListener {
             dialogContinue.dismiss()
             viewModel.process(QuizAction.ClearAndStart)
@@ -148,6 +163,11 @@ class QuizFragment : BaseFragment<FragmentQuizBinding>(), View.OnClickListener {
             viewModel.process(QuizAction.RestoreQuiz(quizAndAnswers))
         }
         dialogContinue.show()
+    }
+
+    private fun setListeners() {
+        binding.btnNext.setOnClickListener(this)
+        binding.btnBack.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
