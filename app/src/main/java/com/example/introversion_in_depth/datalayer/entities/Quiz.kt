@@ -1,9 +1,9 @@
-package com.example.introversion_in_depth.domain.datalayer.entities
+package com.example.introversion_in_depth.datalayer.entities
 
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.introversion_in_depth.domain.datalayer.dataholders.QuizResult
+import com.example.introversion_in_depth.datalayer.dataholders.QuizResult
 
 @Entity(tableName = "quiz")
 data class Quiz(

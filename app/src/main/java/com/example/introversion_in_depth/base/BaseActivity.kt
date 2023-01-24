@@ -1,10 +1,8 @@
-package com.example.introversion_in_depth.domain.contracts
+package com.example.introversion_in_depth.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewbinding.ViewBinding
 import com.example.introversion_in_depth.util.LanguageConfig
 

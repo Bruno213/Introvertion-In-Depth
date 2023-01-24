@@ -1,9 +1,9 @@
-package com.example.introversion_in_depth.domain.datalayer.local.dao
+package com.example.introversion_in_depth.datalayer.local.dao
 
 import androidx.room.*
-import com.example.introversion_in_depth.domain.datalayer.entities.Answer
-import com.example.introversion_in_depth.domain.datalayer.entities.Quiz
-import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
+import com.example.introversion_in_depth.datalayer.entities.Answer
+import com.example.introversion_in_depth.datalayer.entities.Quiz
+import com.example.introversion_in_depth.datalayer.entities.entityrelation.QuizWithAnswers
 
 @Dao
 interface QuizDao {

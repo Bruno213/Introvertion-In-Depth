@@ -1,7 +1,7 @@
 package com.example.introversion_in_depth.ui.fragments.startFragment
 
 import android.net.Uri
-import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
+import com.example.introversion_in_depth.datalayer.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.ui.ViewState
 
 sealed class StartState: ViewState() {

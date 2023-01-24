@@ -1,7 +1,7 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
 import android.content.Context
-import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
+import com.example.introversion_in_depth.datalayer.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.ui.MVIAction
 
 sealed class QuizAction: MVIAction() {

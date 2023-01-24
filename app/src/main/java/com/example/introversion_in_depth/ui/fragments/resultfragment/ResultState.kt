@@ -1,7 +1,7 @@
 package com.example.introversion_in_depth.ui.fragments.resultfragment
 
 import android.net.Uri
-import com.example.introversion_in_depth.domain.datalayer.dataholders.QuizResult
+import com.example.introversion_in_depth.datalayer.dataholders.QuizResult
 import com.example.introversion_in_depth.ui.ViewState
 
 sealed class ResultState: ViewState() {

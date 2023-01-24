@@ -1,4 +1,4 @@
-package com.example.introversion_in_depth.domain.datalayer.dataholders
+package com.example.introversion_in_depth.datalayer.dataholders
 
 data class QuizResult(
     val socialScore: Int = 0,

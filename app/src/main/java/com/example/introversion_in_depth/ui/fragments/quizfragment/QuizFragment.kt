@@ -18,8 +18,8 @@ import com.example.introversion_in_depth.databinding.DialogContinueQuizBinding
 import com.example.introversion_in_depth.databinding.DialogLeaveBinding
 import com.example.introversion_in_depth.databinding.FragmentQuizBinding
 import com.example.introversion_in_depth.di.CustomApplication
-import com.example.introversion_in_depth.domain.contracts.BaseFragment
-import com.example.introversion_in_depth.domain.datalayer.entities.entityrelation.QuizWithAnswers
+import com.example.introversion_in_depth.base.BaseFragment
+import com.example.introversion_in_depth.datalayer.entities.entityrelation.QuizWithAnswers
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.LanguageConfig

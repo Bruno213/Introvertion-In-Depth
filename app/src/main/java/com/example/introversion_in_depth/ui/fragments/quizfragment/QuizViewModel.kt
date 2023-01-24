@@ -1,16 +1,11 @@
 package com.example.introversion_in_depth.ui.fragments.quizfragment
 
-import android.app.Dialog
-import android.content.Context
-import android.view.LayoutInflater
 import androidx.lifecycle.viewModelScope
-import com.example.introversion_in_depth.R
-import com.example.introversion_in_depth.databinding.DialogContinueQuizBinding
-import com.example.introversion_in_depth.domain.contracts.BaseViewModel
-import com.example.introversion_in_depth.domain.datalayer.entities.Answer
-import com.example.introversion_in_depth.domain.datalayer.entities.Quiz
-import com.example.introversion_in_depth.domain.interfaces.ViewStateHandler
-import com.example.introversion_in_depth.domain.repository.QuizRepository
+import com.example.introversion_in_depth.base.BaseViewModel
+import com.example.introversion_in_depth.datalayer.entities.Answer
+import com.example.introversion_in_depth.datalayer.entities.Quiz
+import com.example.introversion_in_depth.interfaces.ViewStateHandler
+import com.example.introversion_in_depth.datalayer.repository.QuizRepository
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

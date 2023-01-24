@@ -1,12 +1,11 @@
 package com.example.introversion_in_depth.ui
 
 import android.animation.ValueAnimator
-import android.content.Context
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import com.example.introversion_in_depth.databinding.ActivityMainBinding
-import com.example.introversion_in_depth.domain.contracts.BaseActivity
+import com.example.introversion_in_depth.base.BaseActivity
 import com.example.introversion_in_depth.util.LanguageConfig
 import com.example.introversion_in_depth.util.SharedPrefsHelper
 

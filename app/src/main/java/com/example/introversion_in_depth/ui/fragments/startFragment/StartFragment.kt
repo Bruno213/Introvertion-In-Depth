@@ -19,8 +19,8 @@ import com.example.introversion_in_depth.databinding.FragmentStartBinding
 import com.example.introversion_in_depth.databinding.ResultsLayoutBinding
 import com.example.introversion_in_depth.databinding.TestInfoLayoutBinding
 import com.example.introversion_in_depth.di.CustomApplication
-import com.example.introversion_in_depth.domain.contracts.BaseFragment
-import com.example.introversion_in_depth.domain.datalayer.dataholders.QuizResult
+import com.example.introversion_in_depth.base.BaseFragment
+import com.example.introversion_in_depth.datalayer.dataholders.QuizResult
 import com.example.introversion_in_depth.ui.MainActivity
 import com.example.introversion_in_depth.ui.ViewState
 import com.example.introversion_in_depth.util.IntroversionMeter

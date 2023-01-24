@@ -1,7 +1,7 @@
 package com.example.introversion_in_depth.util
 
 import com.example.introversion_in_depth.R
-import com.example.introversion_in_depth.domain.datalayer.entities.Answer
+import com.example.introversion_in_depth.datalayer.entities.Answer
 
 object IntroversionMeter {
     fun checkSocialLevel(score: Int): String {
