@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Introversion-In-Depth</string>
 
     <string name="which_kind">Que tipo de introvertido \nvocê é?</string>
     <string name="second_title">Conheça os diferentes aspectos dessa parte frequentemente generalizada de si.</string>
     <string name="start_quiz">Começar Quiz</string>
     <string name="results">Resultados</string>
-    <string name="no_results">Sem resultados para mostrar</string>
+    <string name="no_results">Sem resultados para exibir</string>
     <string name="must_select">Por favor, selecione uma opção para prosseguir</string>
     <string name="about_the_test">Sobre o quiz</string>
     <string name="copyright_disclaimer">Conteúdo para esse quiz foi retirado diretamente do artigo abaixo:</string>
@@ -73,50 +73,50 @@
 
     <string-array name="questions">
         // Social Introversion
-        <item>Gosto de compartilhar ocasiões especiais com apenas uma pessoa ou alguns amigos próximos, em oposição a ter grandes celebrações.</item>
-        <item>Acho que seria satisfatório se eu pudesse ter uma forte ligação de amizade com muitas pessoas</item>
+        <item>Gosto de compartilhar ocasiões especiais com apenas uma pessoa ou alguns amigos próximos, em oposição à grandes celebrações.</item>
+        <item>Acho que seria satisfatório se eu pudesse ter uma forte relação de amizade com muitas pessoas.</item>
         <item>Tento estruturar meu dia de forma a sempre ter algum tempo pra mim mesmo.</item>
         <item>Gosto de viajar para lugares onde existem muitas pessoas ao redor e muitas atividades acontecendo.</item>
-        <item>Depois de gastar algumas horas rodeado por muitas pessoas, eu frequentemente fico ansioso por sair por mim mesmo.</item>
-        <item>Não tenho uma forte necessidade de estar rodeado por outras pessoas.</item>
-        <item>Estar cercado por outras pessoas e poder descobrir mais sobre elas é uma das coisas mais interessanes que eu consigo pensar em fazer.</item>
-        <item>Eu geralmente prefiro fazer as coisas sozinho.</item>
-        <item>Outras pessoas tendem a me entender mal- formando uma impressão errada de que tipo de pessoa eu ,sou porque não falo muito de mim mesmo.</item>
+        <item>Depois de passar algumas horas rodeado por muitas pessoas, costumo ficar ansioso para escapulir para outro lugar.</item>
+        <item>Não sinto grande necessidade de estar rodeado por outras pessoas.</item>
+        <item>Estar cercado por outras pessoas e poder descobrir mais sobre elas é uma das coisas mais interessantes que eu consigo pensar em fazer.</item>
+        <item>Geralmente prefiro fazer as coisas sozinho.</item>
+        <item>Outras pessoas tendem a me entender mal - a formar uma impressão errada de que tipo de pessoa eu sou, porque não falo muito de mim mesmo.</item>
         <item>Me sinto exaurido após situações sociais, mesmo naquelas na qual me diverti.</item>
 
         // Thinking Introversion
-        <item>Eu gosto de analisar minhas próprias ideias e pensamentos sobre mim mesmo.</item>
-        <item>Tenho uma vida interior rica e complexa.</item>
+        <item>Gosto de analisar minhas próprias ideias e pensamentos sobre mim.</item>
+        <item>Tenho uma vida interna rica e complexa.</item>
         <item>Frequentemente penso sobre que tipo de pessoa eu sou.</item>
-        <item>Quando estou lendo uma história interessante ou quando estou assistindo a um bom filme, eu imagino como eu me sentiria se os eventos na história estivessem acontecendo comigo.</item>
+        <item>Quando estou lendo uma história interessante ou quando estou assistindo a um bom filme, imagino como eu me sentiria se os eventos na história estivessem acontecendo comigo.</item>
         <item>Raramente penso sobre mim mesmo.</item>
         <item>Geralmente presto atenção ao meus próprios sentimentos.</item>
-        <item>Eu valorizo minha própria auto-avaliação, ou seja, a opinião particular que tenho de mim mesmo.</item>
+        <item>Valorizo minha própria auto-avaliação, ou seja, a opinião particular que tenho de mim mesmo.</item>
         <item>Algumas vezes volto alguns passos (na minha mente) para poder me auto examinar de um ponto distante.</item>
         <item>Eu devaneio e fantasio, com certa regularidade, sobre coisas que podem acontecer comigo.</item>
-        <item>Sou inclinado a ser introspectivo, ou seja, a analisar a mim mesmo.</item>
+        <item>Tenho propensão a ser introspectivo, ou seja, a analisar a mim mesmo.</item>
 
         // Anxious Introversion
-        <item>Quando entro em uma salWhen I enter a room I often become self-conscious and feel that the eyes of others are upon me.</item>
-        <item>Meus pensamentos são com frequência focados em episódios da minha vida sobre os quais eu gostaria de para de pensar.</item>
-        <item>Meu sistema nervoso algumas vezes fica tão exausto que eu tenho que sair por mim mesmo.</item>
+        <item>Quando entro em uma sala, tendo a ficar autoconsciente e a sentir que os outros estão com os olhares sobre mim.</item>
+        <item>Meus pensamentos são frequentemente focados em episódios da minha vida sobre os quais eu gostaria de para de pensar.</item>
+        <item>Meu sistema nervoso algumas vezes fica tão exausto que eu tenho que me forçar a relaxar.</item>
         <item>Sou confiante a respeito das minhas habilidades sociais.</item>
         <item>Derrota e desapontamento geralmente me deixam com raiva ou com vergonha, mas eu tento não demonstrar isso.</item>
         <item>Não levo muito tempo para superar minha timidez em novas situações.</item>
-        <item>Me sinto confortável mesmo em situações sociais desconhecidas.</item>
+        <item>Me sinto calmo e confortável mesmo em situações sociais desconhecidas.</item>
         <item>Mesmo quando estou entre amigos, com frequência me sinto sozinho e desconfortável.</item>
         <item>Minhas ações, sentimentos e pensamentos internos aterrorizariam alguns dos meus amigos.</item>
-        <item>Me sinto dolorosamente auto-conciente quando estou perto de estranhos.</item>
+        <item>Me sinto dolorosamente autoconciente quando estou perto de estranhos.</item>
 
         // Restrained Introversion
-        <item>Gosto de estar em ação assim que acordo pela manhã.</item>
+        <item>Gosto de me por em ação assim que acordo pela manhã.</item>
         <item>Vou tentar qualquer coisa pelo menos uma vez.</item>
         <item>Para descontração gosto de diminuir o passo e levar as coisas com calma.</item>
         <item>Gosto de me exaurir com tarefas que exigem esforço mental ou físico.</item>
         <item>Frequentemente digo a primeira coisa que vem a minha mente.</item>
-        <item>Eu geralmente busco sensações e experiências novas e excitantes.</item>
-        <item>Gosto de me manter ocupado a todo momento.</item>
-        <item>Frequentemente ajo no impulso do momento.</item>
+        <item>Eu geralmente busco experiências e sensações novas e excitantes.</item>
+        <item tools:ignore="Typos">Gosto de me manter ocupado a todo momento.</item>
+        <item tools:ignore="Typos">Frequentemente ajo no calor do momento.</item>
         <item>Algumas vezes faço coisas "fora do comum" só para ser diferente.</item>
         <item>Frequentemente me sinto lento.</item>
     </string-array>

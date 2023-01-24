@@ -230,9 +230,6 @@ class StartFragment: BaseFragment<FragmentStartBinding>(), View.OnClickListener 
         textView.setOnClickListener {
             customIntent.launchUrl(requireContext(), Uri.parse(url))
         }
-
-//        textView.movementMethod = LinkMovementMethod.getInstance()
-//        textView.removeLinksUnderline()
     }
 
     private fun setupListeners() {
