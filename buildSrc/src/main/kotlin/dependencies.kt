@@ -36,8 +36,11 @@ object Versions {
     const val customTab = "1.4.0"
 
     const val jUnit = "4.13.2"
-    const val testJUnit = "1.1.3"
-    const val espresso = "3.4.0"
+    const val mockito = "5.1.0"
+    const val mockitoKt = "4.1.0"
+
+    const val testJUnit = "1.1.5"
+    const val espresso = "3.5.0"
 
     const val toolsGradle = "7.0.0"
     const val jetbrainsGradle = "1.5.10"
@@ -71,6 +74,9 @@ object Libs {
 }
 
 object TestLibs {
+    const val mockitoKotlin = "org.mockito.kotlin:mockito-kotlin:${Versions.mockitoKt}"
+    const val mockitoCore = "org.mockito:mockito-core:${Versions.mockito}"
+
     const val jUnit = "junit:junit:${Versions.jUnit}"
     const val testJUnit = "androidx.test.ext:junit:${Versions.testJUnit}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
